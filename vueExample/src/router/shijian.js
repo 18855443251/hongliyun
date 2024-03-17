@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-12-24 11:03:18
- * @LastEditTime: 2021-08-23 11:14:23
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vueDemo\src\router\shijian.js
- */
 export default [{
     name: "shijian1",
     path: "/shijian1",
