@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2022-06-17 10:53:51
- * @LastEditTime: 2022-06-17 14:36:27
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue\src\router\promise.js
- */
 //发现首页功能选择频道页
 const promise1 = () => import( /* webpackChunkName: "string" */ "@/views/promise/promise1");
 const promise2 = () => import( /* webpackChunkName: "string" */ "@/views/promise/promise2");
