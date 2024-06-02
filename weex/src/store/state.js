@@ -8,7 +8,7 @@
  */
 export default {
     JNimgBaseUrl: "./imgs/",
-    isShow: true, //江南默认图片路径
+    isShow: true, //默认图片路径
     overLayShow: false, //遮罩
     publicKey: '9D98509F58D8FE58D57254770C44BF3B98CCC61988E0E13DBBA309DA954C8B97F3304B45C37E9C6A32EAA023DA8816B9DEB42B9732CFF15CE20BB4F734F53F44', //公钥
     theme: 'brown', // 主题

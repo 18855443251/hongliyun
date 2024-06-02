@@ -108,7 +108,7 @@ export default {
       allheight: 1334, //整个高度
       list: [
         {
-          typeName: "江南论坛",
+          typeName: "论坛",
           plateId: "0",
           plateTypeId: "4848",
         },
