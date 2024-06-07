@@ -21,7 +21,7 @@
   </div>
 </template>
 <script>
-import { formatOrderList } from "@/utils";
+import { formatOrderList } from "./js/bankList/index.js";
 export default {
   name: "bankList",
   data() {

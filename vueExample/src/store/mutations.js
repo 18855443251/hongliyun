@@ -1,6 +1,5 @@
 // 提交 mutation 是更改状态的唯一方法，并且这个过程是同步的。
 // mutations的主要作用就是为了修改state的。
-import { formatArray } from "@/utils";
 import bankNameList from "@/json/bankNameList.js";
 export default {
   /**
@@ -10,7 +9,6 @@ export default {
    */
   SETKEEPALIVE: (state, keepAlive) => {
     // state.keepAlive.push(...keepAlive)
-    // state.keepAlive = formatArray(state.keepAlive)
   },
   /**
    * 删除页面的数据缓存
@@ -39,7 +37,6 @@ export default {
   // 记录路由跳转历史
   ADDHISTORY: (state, path) => {
     state.history.push(path);
-    // state.history = formatArray(state.history)
   },
   // 删除当前页面的路由记录
   DELETELASTHISTORY(state) {

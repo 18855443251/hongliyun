@@ -32,8 +32,8 @@ export default {
     //map如果遍历一个数组(数组元素是值类型)，改变数组中的值会返回新数组，原数组不会改变
     //map如果遍历一个数组(数组类型是引用类型)，改变数组中的值会返回新数组，原数组会改变
     // this.test();
-    this.test1();
-    // this.test2();
+    // this.test1();
+    this.test2();
     // this.test3();
   },
   methods: {

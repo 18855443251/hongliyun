@@ -37,7 +37,7 @@ export default {
     test1() {
       var arr = [1, 2, 3]; //传入initialValue 会多递归一次
       let a = arr.reduce(function (pre, cur, index, arr) {
-        debugger;
+        // debugger;
         console.log(pre, cur); //10 1
         return pre + cur;
       }, 10);
@@ -61,7 +61,7 @@ export default {
       var arr = [{ name: "brick11" }, { name: "brick12" }, { name: "brick13" }];
       function carryBricks(arr) {
         return arr.reduce(function (prev, current, index, array) {
-          debugger;
+          // debugger;
           console.log(prev, current);
           if (index === 0) {
             return current.name;

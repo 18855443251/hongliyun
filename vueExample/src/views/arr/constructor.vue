@@ -20,8 +20,8 @@ export default {
     };
   },
   created() {
-    this.test();
-    // this.test1();
+    // this.test();
+    this.test1();
     // this.test2();
   },
   methods: {
@@ -46,7 +46,8 @@ export default {
     },
     test2() {
       let arr = [1, 2];
-      let res = arr.constructor(); // []
+      let res = arr.constructor(); 
+      console.log(res)
     },
   },
 };

@@ -143,7 +143,7 @@
 </template>
 <script>
 import { Toast, ActivityIndicator, TabBar } from "mand-mobile";
-import draggable from "vuedraggable";
+// import draggable from "vuedraggable";
 import navBar from "@/components/navBar";
 import debounce from "@/utils/debounce.js";
 import "@/utils/mixins/myTool.js";

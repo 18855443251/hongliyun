@@ -8,22 +8,27 @@
 -->
 <template>
   <div>
-    {{$tableList()}}
+    <div>{{ name}}</div>
+    <div>{{ name.changeText(' 哈哈') }}</div>
+    <div>{{age}}</div>
   </div>
 </template>
 
 <script>
-import {b,text} from './test.js'
+import name from "./js/exportDefault/test1.js";
+import object2 from "./js/exportDefault/object2.js";
 export default {
   name: "home",
   data() {
     return {
+      name,
+      age:''
     };
   },
   created() {
-    console.log(this.$tableList);
-    console.log(b,text(),'1231465');
+    this.age = object2();
   },
+
   methods: {},
 };
 </script>

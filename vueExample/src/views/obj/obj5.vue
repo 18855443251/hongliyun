@@ -18,22 +18,29 @@ export default {
         name: "张三",
         age: "26",
         language: [1, [2, 3], [4, 5]],
+        test(val){
+          return val
+        },
+        info:{
+          date:new Date(),
+          sex:"女"
+        }
       },
     };
   },
   // 深拷贝
   created() {
-    // this.test1();
+    this.test1();
     // this.test2();
-    this.test3();
+    // this.test3();
   },
   methods: {
     test1() {
       var obj3 = JSON.parse(JSON.stringify(this.obj1));
       obj3.name = "李四";
       obj3.language[1] = ["二", "三"];
-      console.log("obj1", this.obj1);
-      console.log("obj3", obj3);
+       obj3.sex = '男';
+      console.log("obj1", this.obj1);//原对象不会改变
     },
     test2() {
       const originObj = {

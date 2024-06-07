@@ -1,5 +1,5 @@
 import Vue from "vue";
-const FundUsageArr = [
+const userArr = [
   // 转账用途
   {
     text: "手机银行转账",
@@ -11,7 +11,7 @@ const FundUsageArr = [
     text: "手工录入",
   },
 ];
-const REPAY_TYPE_LIST = [
+const typeArr = [
   {
     value: "M",
     text: "最低还款",
@@ -21,8 +21,8 @@ const REPAY_TYPE_LIST = [
     text: "全额还款",
   },
 ];
-export { FundUsageArr, REPAY_TYPE_LIST };
-export const LIST_CONFIG_TYPE = [
+export { userArr, typeArr };
+export const configArr = [
   { value: 0, label: "不启用" },
   { value: 1, label: "启用黑名单" },
   { value: 2, label: "启用白名单" },

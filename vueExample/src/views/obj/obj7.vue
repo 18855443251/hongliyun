@@ -24,7 +24,6 @@ export default {
    var obj3=Object.assign({},this.obj1)
     obj3.name="李四";
    console.log("obj1",this.obj1)
-   console.log("obj3",obj3)
   },
   methods: {
   

@@ -32,7 +32,6 @@ export default {
       var obj3 = Object.assign({}, this.obj1);
       obj3.name = "李四";
       obj3.date.age = "33";
-      console.log("obj1", this.obj1);
       console.log("obj3", obj3);
     },
     // JavaScript 中数组和对象自带的拷贝方法都是“首层浅拷贝”；
@@ -42,7 +41,6 @@ export default {
       copyObj2.name = "zhangsan";
       copyObj2.grade.chi = "50";
       console.log("srcObj", srcObj); //name: "lilei" grade: {chi: "50", eng: "100"}
-      console.log("copyObj2", copyObj2); //name: "zhangsan" grade: {chi: "50", eng: "100"}
     },
   },
 };

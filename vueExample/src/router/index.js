@@ -48,8 +48,8 @@ import watch1 from "@/views/watch/watch1"; //引导页
 import watch2 from "@/views/watch/watch2"; //引导页
 import watch3 from "@/views/watch/watch3"; //引导页
 import test from "@/views/test";
+import test1 from "@/views/test1";
 import typeof1 from "@/views/typeof1";
-
 import creditSituation from "@/views/creditSituation/creditSituation"; //引导页
 import message from "@/views/messageManage/message";
 import style from "./style.js";
@@ -85,8 +85,7 @@ import store from "./store.js";
 import mixins from "./mixins.js";
 import jilei from "./jilei.js";
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: "/home",
       name: "home",
       component: home,
@@ -99,7 +98,11 @@ export default new Router({
       name: "test",
       component: test,
     },
-
+    {
+      path: "/test1",
+      name: "test1",
+      component: test1,
+    },
     {
       path: "/star",
       name: "star",

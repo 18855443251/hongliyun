@@ -21,13 +21,44 @@ export default {
     };
   },
   created() {
-    this.zhuTest("测试", (data) => {
-      this.msg = data;
-    });
+    // this.test1();
+    // this.test2();
+    // this.test3({ name: "历史" },(res)=>{
+    //  console.log(res)
+    // });
+    // this.test4();
   },
   methods: {
+    test1() {
+      this.zhuTest("测试", (data) => {
+        this.msg = data;
+      });
+    },
+    test2() {
+      let _this = this;
+      this.zhuTest("测试", function (data) {
+        _this.msg = data;
+      });
+    },
+    test3(obj, callback) {
+      const fn = (data) => {
+        if (typeof callback === "function") {
+          callback(data);
+        }
+        this.msg = data;
+      };
+      this.zhuTest("测试3", fn);
+    },
+    test4() {
+      this.zhuTest("测试", "55");
+    },
     zhuTest(msg, callback) {
-      callback && callback(msg);
+      console.log(callback);
+      if (typeof callback === "function") {
+        callback && callback(msg);
+      } else {
+        console.log(msg, callback);
+      }
     },
   },
 };

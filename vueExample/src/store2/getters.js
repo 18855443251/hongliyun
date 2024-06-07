@@ -1,9 +1,4 @@
-import ThemeJson from "@/json/theme.json";
-import state from "./state";
-export default {
-  themeStyle() {
-    return ThemeJson[state.theme];
-  },
+const getters = {
   lockNum: (state) => state.user.lockNum,
   logoutNum: (state) => state.user.logoutNum,
   name: (state) => state.user.name,
@@ -13,3 +8,4 @@ export default {
     return state.user.age;
   },
 };
+export default getters;

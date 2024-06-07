@@ -41,6 +41,12 @@ export default {
         element.setAttribute("download", val.adjustFileName);
         element.style.display = "none";
         element.click();
+
+
+          // let a = document.createElement("a");
+          //         a.href = info.filePath + "/" + info.fileName;
+          //         a.download = info.fileName;
+          //         a.click();
       } else {
         window.open(this.newwang + val.adjustFileUrl);
       }

@@ -1,4 +1,4 @@
-export const FundUsageArr = [
+export const userArr = [
   // 转账用途
   {
     text: "手机银行转账",
@@ -10,7 +10,7 @@ export const FundUsageArr = [
     text: "手工录入",
   },
 ];
-export const REPAY_TYPE_LIST = [
+export const typeArr = [
   {
     value: "M",
     text: "最低还款",

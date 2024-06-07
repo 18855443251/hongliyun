@@ -8,31 +8,31 @@
 -->
 <template>
   <div>
-    <div>{{ newname1 }}</div>
-    <div>{{ newname2 }}</div>
+    <div>{{ str1 }}</div>
+    <div>{{ year1 }}</div>
     <div>{{name}}</div>
   </div>
 </template>
 
 <script>
 import {
-  str as newname1,
-  year as newname2,
-  message as newname3,
+  str as str1,
+  year as year1,
+  message as message1,
   name
-} from "@/common/js/config3.js";
+} from "./js/config3.js";
 
 export default {
   name: "home",
   data() {
     return {
-      newname1,
-      newname2,
+      str1,
+      year1,
       name
     };
   },
   created() {
-    console.log(newname3("消息"));
+    console.log(message1("消息"));
   },
   methods: {},
 };

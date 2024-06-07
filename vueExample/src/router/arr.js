@@ -1,7 +1,15 @@
+/*
+ * @Author: your name
+ * @Date: 2021-06-18 09:31:24
+ * @LastEditTime: 2021-08-25 10:44:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \app空工程\bank\src\router\my.js
+ */
 const arr1 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr1.vue"); // 通讯录
 const arr2 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr2.vue"); // 通讯录
 const arr3 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr3.vue"); // 通讯录
-const arr4 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr4.vue"); // 通讯录
+const ArrayPrototype = () => import(/* webpackChunkName: "my" */ "@/views/arr/ArrayPrototype.vue"); // 通讯录
 const arr5 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr5.vue"); // 通讯录
 const arrbianli = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/arrbianli.vue"); // 通讯录
@@ -54,9 +62,9 @@ export default [
     component: arr3,
   },
   {
-    name: "arr4",
-    path: "/arr4",
-    component: arr4,
+    name: "ArrayPrototype",
+    path: "/ArrayPrototype",
+    component: ArrayPrototype,
   },
   {
     name: "arrbianli",

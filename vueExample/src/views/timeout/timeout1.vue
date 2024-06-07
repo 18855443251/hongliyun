@@ -22,7 +22,10 @@ export default {
     };
   },
   created() {
-    clearInterval(this.timer);
+    // timer 设置timer为null只是将timer指向null 只是清除timer的内存
+    if (this.timer) {
+      clearInterval(this.timer);//clearInterval才是真正的清空定时器
+    }
     this.timer = setInterval(() => {
       for (let item of this.timeList) {
         item.time++;
@@ -31,16 +34,16 @@ export default {
     }, 1000);
   },
   methods: {
-    test(){
-      this.jump('/timeout2')
-    }
+    test() {
+      this.jump("/timeout2");
+    },
   },
   // beforeDestroy(){
   //   clearInterval(this.timer);
   // },
-  destroyed(){
+  destroyed() {
     clearInterval(this.timer);
-  }
+  },
 };
 </script>
 

@@ -42,6 +42,7 @@ export default {
   created() {
     //   在方法中使用过滤器
     this.bankNum2 = this.$options.filters.tailNumBankCard(this.bankNum2);
+    console.log(this.$utils.testGong("用户号或密码不能为空！"))
   },
   methods: {},
 };

@@ -22,8 +22,8 @@ export default {
     // this.test4();
   },
   methods: {
-    //数组为空 不会进来find
-    // find  条件不满足返回一个undefined
+    // 数组为空 不会进来find
+    // find 条件不满足返回一个undefined
     // 该方法主要应用于查找第一个符合条件的数组元素
     test1() {
       let arr = [1, 2, 3, 14, 5];

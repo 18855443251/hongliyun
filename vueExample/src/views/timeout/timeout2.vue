@@ -8,7 +8,7 @@
 -->
 <template>
   <div>
-    <div> 主线程上宏任务、微任务执行顺序</div>
+    <div>主线程上宏任务、微任务执行顺序</div>
   </div>
 </template>
 
@@ -19,22 +19,47 @@ export default {
     return {};
   },
   created() {
-    this.test()
+    this.test1();
   },
   methods: {
+    // Promise 本身是同步的 promise的回调then和catch是异步的
     // 主线程上宏任务、微任务执行顺序
     test() {
-      console.log("---start---"); //第一轮主线程
+      console.log("1");
       setTimeout(() => {
-        console.log("setTimeout"); // 将回调代码放入个宏任务队列，第二轮宏任务执行
+        console.log("2");
       }, 0);
       new Promise((resolve, reject) => {
-        console.log("---Promise第一轮微任务同步执行---"); //第一轮微任务同步执行
+        console.log("3");
         resolve();
       }).then(() => {
-        console.log("Promise.then实例成功回调执行"); // 将回调代码放入微任务队列，第一轮宏任务执行完后立即执行
+        console.log("4");
       });
-      console.log("---end---"); //第一轮主线程结束
+      console.log("5");
+    }, //1 3 5 4 2
+    test1() {
+      console.log("1");
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("8");
+        }, 0);
+        resolve();
+      }).then(() => {
+        setTimeout(() => {
+          console.log("3");
+        }, 0);
+        console.log("4");
+      });
+      console.log("6");
+      setTimeout(() => {
+        new Promise((resolve, reject) => {
+          console.log("2");
+          resolve();
+        }).then(() => {
+          console.log("7");
+        });
+      }, 0);
+      console.log("5"); //1 6 5 4 8 2 7 3
     },
   },
 };

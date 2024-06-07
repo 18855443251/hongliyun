@@ -13,6 +13,7 @@ export default {
     let yList = [1, 2, 5, 7, 9];
     let res = [];
     for (let i = 0; i < yList.length; i++) {
+      console.log(i,'Jj')
       if (yList[i + 1]) {
         res.push(yList[i + 1] - yList[i]);
       }

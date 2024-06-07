@@ -39,17 +39,18 @@ export default {
     },
     // 更快
     async getData() {
-      const time1 = 3000;
-      const time2 = await this.test(time1);
-      console.log(time2, "3秒后返回");
-      const time3 = await this.test(time2);
-      console.log(time3, "5秒后返回");
-      const result = await this.test(time3);
-      console.log(result, "7秒后返回");
-      // let res = await new Promise((resolve) => {
-      //   setTimeout(() => resolve(2000), 3000);
-      // });
-      // console.log(res);
+      // const time1 = 3000;
+      // const time2 = await this.test(time1);
+      // console.log(time2, "3秒后返回");
+      // const time3 = await this.test(time2);
+      // console.log(time3, "5秒后返回");
+      // const result = await this.test(time3);
+      // console.log(result, "7秒后返回");
+      let res = await new Promise((resolve) => {
+        setTimeout(() => resolve(2000), 3000);
+      });
+      console.log(res);
+      console.log('hhg')
     },
   },
 };

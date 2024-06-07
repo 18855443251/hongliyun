@@ -19,32 +19,46 @@ export default {
     return {};
   },
   created() {
-    this.test();
+    // this.test();
+    this.test1();
   },
   methods: {
     // 宏任务中包含微任务
     test() {
-      // 宏任务队列 1
       setTimeout(() => {
-        // 宏任务队列 2.1
-        console.log("timer_1");
+        console.log("1");
         setTimeout(() => {
-          // 宏任务队列 3
-          console.log("timer_3");
+          console.log("2");
         }, 0);
         new Promise((resolve) => {
           resolve();
-          console.log("new promise");
+          console.log("3");
         }).then(() => {
-          // 微任务队列 1
-          console.log("promise then");
+          console.log("4");
         });
       }, 0);
       setTimeout(() => {
-        // 宏任务队列 2.2
-        console.log("timer_2");
+        console.log("5");
       }, 0);
-      console.log("========== Sync queue ==========");
+      console.log("6"); //6 1 3 4 5  2
+    },
+    test1() {
+      setTimeout(() => {
+        console.log("1");
+        setTimeout(() => {
+          console.log("2");
+        }, 0);
+        new Promise((resolve) => {
+          resolve();
+          console.log("3");
+        }).then(() => {
+          console.log("4");
+        });
+      }, 0);
+      setTimeout(() => {
+        console.log("5");
+      }, 100);
+      console.log("6"); //613425
     },
   },
 };

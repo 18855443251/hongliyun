@@ -20,9 +20,9 @@ export default {
     };
   },
   created() {
-    this.queryData().then((res) => {
-      console.log(res); //返回数据
-    });
+    // this.queryData().then((res) => {
+    //   console.log(res,'res'); //返回数据
+    // });
     this.test();
   },
   methods: {

@@ -34,7 +34,7 @@ export default {
       // 第一种写法
       let a = await new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve(2 * 'j');
+          resolve(2 * 2);
         }, 1000);
       });
       let b = await new Promise((resolve, reject) => {
@@ -51,7 +51,7 @@ export default {
       // 第二种写法
       // try {
       //   // await后面通常放的是一个Promise对象
-      //   let a = await this.test1("j");
+      //   let a = await this.test1("2");
       //   let b = await this.test1(4);
       //   let c = await this.test1(5);
       //   console.log(a, b, c);

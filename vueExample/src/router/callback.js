@@ -15,4 +15,9 @@ export default [{
     name: "callback2",
     path: "/callback2",
     component: () => import( /* webpackChunkName: "callback" */ "@/views/callback/callback2.vue"),
+},
+{
+    name: "callback3",
+    path: "/callback3",
+    component: () => import( /* webpackChunkName: "callback" */ "@/views/callback/callback3.vue"),
 }]

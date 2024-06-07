@@ -489,4 +489,16 @@ export default {
     let firstDay = new Date(date.getFullYear(), date.getMonth() - 1);
     return firstDay.valueOf();
   },
+  // 得到指定月最后一天 传进来按 12月算
+  getCurrMonthLastDay(year, yue) {
+    if (yue >= 12) {
+      year = year + 1;
+      yue = yue - 12;
+    }
+    return parseInt(new Date(year, yue, 0).getDate());
+  },
+  //得到指定月的上个月最后一天传进来按 12月算
+  getPervMonthLastDay(year, yue) {
+    return parseInt(new Date(year, yue - 1, 0).getDate());
+  },
 };

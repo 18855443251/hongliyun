@@ -1,4 +1,9 @@
-const getters = {
+import ThemeJson from "@/json/theme.json";
+import state from "./state";
+export default {
+  themeStyle() {
+    return ThemeJson[state.theme];
+  },
   lockNum: (state) => state.user.lockNum,
   logoutNum: (state) => state.user.logoutNum,
   name: (state) => state.user.name,
@@ -8,4 +13,3 @@ const getters = {
     return state.user.age;
   },
 };
-export default getters;

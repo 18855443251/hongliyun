@@ -8,53 +8,48 @@
 -->
 <template>
   <div>
-    <div v-for="(item, index) in FundUsageArr" :key="index">
-      {{ item.text }}
-    </div>
-    <div v-for="(item, index) in REPAY_TYPE_LIST" :key="'step' + index">
-      {{ item.text }}
-    </div>
-    <div>{{ LIST_CONFIG_TYPE }}</div>
-    <div>{{ $tableMapList(name) }}</div>
-    <div>{{struct.sendTypeList}}</div>
+    <div>userArr:{{ userArr }}</div>
+    <div>typeArr:{{ typeArr }}</div>
+    <div>configArr:{{ configArr }}</div>
+    <div>$store.state.name:{{$store.state.name}}</div>
+    <div>$tableMapList:{{ $tableMapList(name) }}</div>
+    <!-- <div>userArr:{{struct.userArr}}</div> -->
   </div>
 </template>
 
 <script>
-import {
-  FundUsageArr,
-  REPAY_TYPE_LIST,
-  LIST_CONFIG_TYPE,
-} from "@/common/js/config.js";
-// import { FundUsageArr, REPAY_TYPE_LIST } from "@/common/js/config1.js";
-import * as struct from "@/common/js/message.js";
-// import {sendTypeList,statusList} from "@/common/js/message.js";
-import Msg from "@/common/js/msg";
+import { userArr, typeArr, configArr, message, message1,message2 } from "./js/config.js";
+// import { userArr, typeArr, configArr } from "@/common/js/config1.js";
+// import * as struct from "./js/config.js";
+import Msg from "./js/msg";
 export default {
   name: "home",
   data() {
     return {
-      FundUsageArr,
-      REPAY_TYPE_LIST,
-      LIST_CONFIG_TYPE,
+      userArr,
+      typeArr,
+      configArr,
       name: "",
-      struct,
-      // sendTypeList,
-      // statusList
+      // struct,
     };
   },
   created() {
+    console.log(message("张三"));
+    // console.log(message1(this, this.$store, { age: "15" }));
     // Msg.Confirm("该文件过大，请退出后稍后再试", () => {
     //   console.log("好好");
     // });
-     Msg.Confirm({
-      icon:'',
-      title:'温馨提示',
-      content:'何恢复',
-      confirmText:'查看'
-     }, () => {
-      console.log("好好");
-    });
+    // Msg.Confirm(
+    //   {
+    //     icon: "",
+    //     title: "温馨提示",
+    //     content: "何恢复",
+    //     confirmText: "查看",
+    //   },
+    //   () => {
+    //     console.log("好好");
+    //   }
+    // );
   },
   methods: {},
 };

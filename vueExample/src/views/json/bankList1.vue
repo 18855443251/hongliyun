@@ -14,9 +14,9 @@
   </div>
 </template>
 <script>
-import pinyinObj from "@/json/pinyin.js";
-import ABCArr from "@/json/ABC.js";
-import newList from './default-data.js'
+import pinyinObj from "./js/bankList/pinyin.js";
+import ABCArr from "./js/bankList/ABC.js";
+import newList from './js/bankList/default-data.js'
 export default {
   name: "bankList",
   data() {

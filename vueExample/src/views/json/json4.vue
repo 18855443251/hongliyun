@@ -1,5 +1,5 @@
 <template>
-  <div>{{res}}</div>
+  <div>{{ res }}</div>
 </template>
 
 <script>
@@ -8,11 +8,11 @@ export default {
   name: "home",
   data() {
     return {
-        res:""
+      res: "",
     };
   },
   created() {
-    this.test()
+    this.test();
     // this.test1();
   },
   methods: {
@@ -20,9 +20,9 @@ export default {
       axios
         .get("/test.json")
         .then((res) => {
-       this.res=res
+          this.res = res;
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error);
         });
     },
@@ -30,9 +30,9 @@ export default {
       this.$axios
         .post("test.do")
         .then((res) => {
-        this.res=res
+          this.res = res;
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error);
         });
     },

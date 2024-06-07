@@ -27,19 +27,19 @@ export default {
     //   console.log(res); //张三
     // });
     // 第一种写法
-    // this.test2(false)
-    //   .then((value) => {
-    //     this.name = value;
-    //   })
-    //   .catch((err) => {
-    //     this.name = err;
-    //   });
+    this.test2(false)
+      .then((value) => {
+        this.name = value;
+      })
+      .catch((err) => {
+        this.name = err;
+      });
     // 第二种写法
-    let res = this.test2(true); //返回的是一个promise对象
-    console.log(res,'返回的是一个promise对象')
-    res.then((value) => {
-      this.name = value;
-    });
+    // let res = this.test2(true); //返回的是一个promise对象
+    // console.log(res,'返回的是一个promise对象')
+    // res.then((value) => {
+    //   this.name = value;
+    // });
   },
   methods: {
     // async写在函数前，返回一个promise对象，当返回值不是一个promise对象，会强制转为promise对象

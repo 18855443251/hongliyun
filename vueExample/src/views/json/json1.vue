@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import bankList from "@/json/bankList.js";
+import bankList from "./js/bankList/bankList.js";
 import ThemeJson from "@/json/theme.json";
 export default {
   name: "home",
@@ -67,7 +67,7 @@ export default {
       });
       arr.push(obj);
       this.playerList = arr;
-      console.log(JSON.stringify(this.playerList));
+      console.log(this.playerList);
     },
   },
 };
