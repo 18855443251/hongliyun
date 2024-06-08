@@ -18,15 +18,10 @@ export default {
     };
   },
   created() {
-    this.getData();
+    this.getData1();
     // this.doIt();
   },
   methods: {
-    test(n) {
-      return new Promise((resolve) => {
-        setTimeout(() => resolve(n + 2000), n);
-      });
-    },
     doIt() {
       console.log("doIt");
       const time1 = 300;
@@ -37,20 +32,26 @@ export default {
           console.log(`result is ${result}`);
         });
     },
-    // 更快
     async getData() {
-      // const time1 = 3000;
-      // const time2 = await this.test(time1);
-      // console.log(time2, "3秒后返回");
-      // const time3 = await this.test(time2);
-      // console.log(time3, "5秒后返回");
-      // const result = await this.test(time3);
-      // console.log(result, "7秒后返回");
       let res = await new Promise((resolve) => {
         setTimeout(() => resolve(2000), 3000);
       });
       console.log(res);
-      console.log('hhg')
+      console.log("后面执行");
+    },
+    async getData1() {
+      const time1 = 3000;
+      const time2 = await this.test(time1);
+      console.log(time2, "3秒后返回");
+      const time3 = await this.test(time2);
+      console.log(time3, "5秒后返回");
+      const result = await this.test(time3);
+      console.log(result, "7秒后返回");
+    },
+    test(n) {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(n + 2000), n);
+      });
     },
   },
 };

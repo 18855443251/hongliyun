@@ -9,18 +9,14 @@
 //发现首页功能选择频道页
 const promise1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/promise1");
-const promise2 = () =>
-  import(/* webpackChunkName: "string" */ "@/views/promise/promise2");
-const promise3 = () =>
-  import(/* webpackChunkName: "string" */ "@/views/promise/promise3");
+
 const promise4 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/promise4");
 const promise5 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/promise5");
-const promise6 = () =>
-  import(/* webpackChunkName: "string" */ "@/views/promise/promise6");
-const promise7 = () =>
-  import(/* webpackChunkName: "string" */ "@/views/promise/promise7");
+const await4 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/await4");
+
 const then1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/then1");
 const catch1 = () =>
@@ -31,21 +27,15 @@ const race1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/race1");
 const await1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/await1");
+const await2 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/await2");
+const await3 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/await3");
 export default [
   {
     name: "promise1",
     path: "/promise1",
     component: promise1,
-  },
-  {
-    name: "promise2",
-    path: "/promise2",
-    component: promise2,
-  },
-  {
-    name: "promise3",
-    path: "/promise3",
-    component: promise3,
   },
   {
     name: "promise4",
@@ -58,14 +48,9 @@ export default [
     component: promise5,
   },
   {
-    name: "promise6",
-    path: "/promise6",
-    component: promise6,
-  },
-  {
-    name: "promise7",
-    path: "/promise7",
-    component: promise7,
+    name: "await4",
+    path: "/await4",
+    component: await4,
   },
   {
     name: "then1",
@@ -91,5 +76,15 @@ export default [
     name: "await1",
     path: "/await1",
     component: await1,
+  },
+  {
+    name: "await2",
+    path: "/await2",
+    component: await2,
+  },
+  {
+    name: "await3",
+    path: "/await3",
+    component: await3,
   },
 ];
