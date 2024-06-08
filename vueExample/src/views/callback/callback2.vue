@@ -21,18 +21,18 @@ export default {
     };
   },
   created() {
-    setTimeout(function myFunction() {
-      console.log("I love You"); //10
-    }, 3000);
+    // setTimeout(function myFunction() {
+    //   console.log("I love You"); //10
+    // }, 3000);
     // setTimeout(this.myFunction, 3000);
-    // this.myCalculator(5, 5, this.myDisplayer);
+    this.myCalculator(5, 5, this.myDisplayer);
   },
   methods: {
     myFunction() {
       console.log("I love You1"); //10
     },
     myCalculator(num1, num2, myCallback) {
-      console.log(myCallback);
+      console.log(myCallback,'myCallback');
       let sum = num1 + num2;
       myCallback(sum);
     },

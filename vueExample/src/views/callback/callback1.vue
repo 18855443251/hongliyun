@@ -23,10 +23,10 @@ export default {
   created() {
     // this.test1();
     // this.test2();
-    // this.test3({ name: "历史" },(res)=>{
-    //  console.log(res)
+    // this.test3({ name: "历史" }, (data) => {
+    //   this.msg = data;
     // });
-    // this.test4();
+    this.test4();
   },
   methods: {
     test1() {
@@ -45,7 +45,6 @@ export default {
         if (typeof callback === "function") {
           callback(data);
         }
-        this.msg = data;
       };
       this.zhuTest("测试3", fn);
     },

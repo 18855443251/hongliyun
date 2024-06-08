@@ -20,46 +20,18 @@ export default {
     };
   },
   created() {
-    this.test2();
+    new Promise((resolve, reject) => {
+      resolve("哈哈");
+    }).then((data) => {
+      console.log(data);
+      console.log(hh);
+    });
+
+    setTimeout(() => {
+      console.log("hhh");
+    });
   },
-  methods: {
-    test1(num) {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * num);
-        }, 1000);
-      });
-    },
-    async test2() {
-      // 第一种写法
-      let a = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 2);
-        }, 1000);
-      });
-      let b = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 4);
-        }, 1000);
-      });
-      let c = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 5);
-        }, 1000);
-      });
-      console.log(a, b, c);
-      // 第二种写法
-      // try {
-      //   // await后面通常放的是一个Promise对象
-      //   let a = await this.test1("2");
-      //   let b = await this.test1(4);
-      //   let c = await this.test1(5);
-      //   console.log(a, b, c);
-      // } catch (err) {
-      //   console.log(err);
-      // }
-    },
-  },
+  methods: {},
 };
 </script>
 <style scoped>

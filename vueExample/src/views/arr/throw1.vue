@@ -19,7 +19,7 @@ export default {
   created() {
     // this.test2();
     // this.test3();
-    this.test4();
+    this.test2();
     // this.test5();
     // let a=this.test6()
     // console.log(a)
