@@ -20,44 +20,44 @@ export default {
     };
   },
   created() {
-    this.test2();
+    this.geData();
   },
   methods: {
-    test1(num) {
+    // await右侧的表达式一般为promise对象，但也可以是其它的值、
+    // 如果表达式是promise对象，await返回的是promise成功的值
+    // 如果表达式是其它值，直接将此值作为await的返回值
+    // await必须写在async函数中，但async函数中可以没有await
+    // 如果await的promise失败了 就会抛出异常，需要try catch处理
+    async geData() {
+      let a = await this.test1();
+      console.log(a, "a");
+      // 不加try catch await会阻断后面的代码
+      try {
+        let b = await this.test3();
+        console.log(b, "b"); //
+      } catch (error) {
+        console.log(error, "error");
+      }
+      let c = await this.test2();
+      console.log(c, "c");
+      let d = await 2;
+      console.log(d, "d");
+      let e = await this.test4();
+      console.log(e, "e");
+    },
+    test1() {
+      return "成功";
+    },
+    test2() {
       return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * num);
-        }, 1000);
+        resolve("成功");
       });
     },
-    async test2() {
-      // 第一种写法
-      let a = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 2);
-        }, 1000);
-      });
-      let b = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 4);
-        }, 1000);
-      });
-      let c = await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(2 * 5);
-        }, 1000);
-      });
-      console.log(a, b, c);
-      // 第二种写法
-      // try {
-      //   // await后面通常放的是一个Promise对象
-      //   let a = await this.test1("2");
-      //   let b = await this.test1(4);
-      //   let c = await this.test1(5);
-      //   console.log(a, b, c);
-      // } catch (err) {
-      //   console.log(err);
-      // }
+    test3() {
+      return Promise.reject("失败");
+    },
+    async test4() {
+      return "成功";
     },
   },
 };

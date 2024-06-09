@@ -1,15 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-20 15:29:38
- * @LastEditTime: 2022-06-17 14:41:31
+ * @LastEditTime: 2022-06-17 14:13:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\src\views\empty.vue
 -->
 <template>
-  <div class="claneCache_view">
-    <div>{{name}}</div>
-  </div>
+  <div class="claneCache_view"></div>
 </template>
 <script>
 export default {
@@ -19,28 +17,27 @@ export default {
       name: "",
     };
   },
-  created() {
-    // this.queryData().then((res) => {
-    //   console.log(res,'res'); //返回数据
-    // });
-    this.test();
+  async created() {
+    let a1 = await this.test1();
+    let a2 = await this.test2(a1);
+    let a3 = await this.test3(a2);
+    console.log(a3);
   },
   methods: {
-    async queryData() {
-      var ret = await this.$axios.post("myIndex.do", {
-        userId: "35123",
+    test1() {
+      return new Promise((resolve, reject) => {
+        resolve(1);
       });
-      return ret;
     },
-    async test() {
-      var ret = await this.$axios
-        .post("myIndex.do", {
-          userId: "35123",
-        })
-        .then((res) => {
-          console.log(res); //返回数据
-        });
-        console.log(ret,'就')
+    test2(value) {
+      return new Promise((resolve, reject) => {
+        resolve(value + 1);
+      });
+    },
+    test3(value) {
+      return new Promise((resolve, reject) => {
+        resolve(value + 1);
+      });
     },
   },
 };

@@ -36,18 +36,23 @@ export default {
     this.test();
   },
   methods: {
-    // 2 4 3 1
+    // 2 5  3 4 1
     test() {
-      setTimeout(function () {
+      setTimeout(() => {
         console.log("1");
       });
       new Promise(function (resolve) {
         console.log("2");
         resolve();
-      }).then(function () {
-        console.log("3");
-      });
-      console.log("4");
+      })
+        .then((res) => {
+          // res undefines
+          console.log("3");
+        })
+        .then((res) => {
+          console.log("4");
+        });
+      console.log("5");
     },
   },
 };

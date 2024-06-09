@@ -1,13 +1,15 @@
 <!--
  * @Author: your name
  * @Date: 2021-08-20 15:29:38
- * @LastEditTime: 2022-06-17 14:13:17
+ * @LastEditTime: 2022-06-17 14:10:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue\src\views\empty.vue
 -->
 <template>
-  <div class="claneCache_view"></div>
+  <div class="claneCache_view">
+    <div>{{ name }}</div>
+  </div>
 </template>
 <script>
 export default {
@@ -17,27 +19,61 @@ export default {
       name: "",
     };
   },
-  async created() {
-    let a1 = await this.test1();
-    let a2 = await this.test2(a1);
-    let a3 = await this.test3(a2);
-    console.log(a3);
+  created() {
+    // let a = this.test1();
+    // console.log(a); //返回的是一个promise对象
+    // this.test1().then((value) => {
+    //   console.log(value);
+    // });
+    // this.test2(false)
+    //   .then((value) => {
+    //     console.log(value, "value");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error, "error");
+    //   });
+    // this.test3(true)
+    //   .then((value) => {
+    //     console.log(value, "value");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error, "error");
+    //   });
+
+    this.test4()
+      .then((value) => {
+        console.log(value);
+      })
+      .catch((error) => {
+        console.log(error, "error");
+      });
   },
   methods: {
-    test1() {
-      return new Promise((resolve, reject) => {
-        resolve(1);
-      });
+    // async写在函数前，返回一个promise对象，当返回值不是一个promise对象，会强制转为promise对象
+    async test1() {
+      return "成功";
     },
-    test2(value) {
-      return new Promise((resolve, reject) => {
-        resolve(value + 1);
-      });
+    async test2(flag) {
+      if (flag) {
+        return "成功";
+      } else {
+        throw "错误";
+      }
     },
-    test3(value) {
+    async test3(flag) {
       return new Promise((resolve, reject) => {
-        resolve(value + 1);
-      });
+        setTimeout(() => {
+          if (flag) {
+            resolve("成功");
+          } else {
+            reject("失败");
+          }
+        });
+      }, 3000);
+    },
+    async test4() {
+      // return Promise.resolve("成功");
+      return Promise.reject("失败");
     },
   },
 };

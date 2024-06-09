@@ -6,9 +6,6 @@
  * @Description: In User Settings Edit
  * @FilePath: \vue\src\router\promise.js
  */
-//发现首页功能选择频道页
-const promise1 = () =>
-  import(/* webpackChunkName: "string" */ "@/views/promise/promise1");
 
 const promise4 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/promise4");
@@ -19,6 +16,8 @@ const await4 = () =>
 
 const then1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/then1");
+const then2 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/then2");
 const catch1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/catch1");
 const all1 = () =>
@@ -32,11 +31,6 @@ const await2 = () =>
 const await3 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/await3");
 export default [
-  {
-    name: "promise1",
-    path: "/promise1",
-    component: promise1,
-  },
   {
     name: "promise4",
     path: "/promise4",
@@ -56,6 +50,11 @@ export default [
     name: "then1",
     path: "/then1",
     component: then1,
+  },
+  {
+    name: "then2",
+    path: "/then2",
+    component: then2,
   },
   {
     name: "catch1",

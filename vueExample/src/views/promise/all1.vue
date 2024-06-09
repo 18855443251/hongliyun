@@ -45,9 +45,7 @@ export default {
       });
     },
     test3() {
-      return new Promise((resolve, reject) => {
-        resolve("3");
-      });
+      return Promise.resolve("3");
     },
   },
 };
