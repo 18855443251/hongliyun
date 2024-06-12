@@ -22,6 +22,7 @@ export default {
     setTimeout(() => {
       console.log("0");
     }, 0);
+
     new Promise((resolve, reject) => {
       console.log("1");
       resolve();

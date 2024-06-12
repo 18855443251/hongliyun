@@ -32,6 +32,7 @@ export default {
     [PopupTitleBar.name]: PopupTitleBar,
   },
   props: {
+    // 监听值
     value: {
       type: Boolean,
       default: false,

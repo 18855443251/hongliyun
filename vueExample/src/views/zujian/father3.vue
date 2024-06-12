@@ -1,6 +1,7 @@
 <template>
   <div>
     <son5 v-model="count"></son5>
+    <!-- <son5 :value="count"></son5> -->
   </div>
 </template>
 
@@ -12,7 +13,7 @@ export default {
   },
   data() {
     return {
-      count: 0,
+      count: 1,
     };
   },
   created() {},

@@ -19,6 +19,7 @@ export default {
   },
   created() {},
   methods: {
+    // 语法糖
     addFun() {
       this.$emit("input", this.value+1);
     }
