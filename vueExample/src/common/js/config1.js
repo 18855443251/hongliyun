@@ -20,3 +20,6 @@ export const typeArr = [
     text: "全额还款",
   },
 ];
+export default {
+  a: 20,
+};

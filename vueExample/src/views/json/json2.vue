@@ -8,18 +8,18 @@
 -->
 <template>
   <div>
-    <div>userArr:{{ userArr }}</div>
+    <!-- <div>userArr:{{ userArr }}</div>
     <div>typeArr:{{ typeArr }}</div>
     <div>configArr:{{ configArr }}</div>
     <div>$store.state.name:{{$store.state.name}}</div>
-    <div>$tableMapList:{{ $tableMapList(name) }}</div>
+    <div>$tableMapList:{{ $tableMapList(name) }}</div> -->
     <!-- <div>userArr:{{struct.userArr}}</div> -->
   </div>
 </template>
 
 <script>
-import { userArr, typeArr, configArr, message, message1,message2 } from "./js/config.js";
-// import { userArr, typeArr, configArr } from "@/common/js/config1.js";
+// import { userArr, typeArr, configArr, message, message1,message2 } from "./js/config.js";
+import info,{ userArr, typeArr, configArr } from "@/common/js/config1.js";//按需导入
 // import * as struct from "./js/config.js";
 import Msg from "./js/msg";
 export default {
@@ -34,7 +34,8 @@ export default {
     };
   },
   created() {
-    console.log(message("张三"));
+    console.log(info)
+    // console.log(message("张三"));
     // console.log(message1(this, this.$store, { age: "15" }));
     // Msg.Confirm("该文件过大，请退出后稍后再试", () => {
     //   console.log("好好");

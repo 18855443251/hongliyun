@@ -10,6 +10,7 @@ export const userArr = [
     text: "手工录入",
   },
 ];
+// 按需导出
 export const typeArr = [
   {
     value: "M",
@@ -25,4 +26,6 @@ export const configArr = [
   { value: 1, label: "启用黑名单" },
   { value: 2, label: "启用白名单" },
 ];
-
+export default {
+  a: 20,
+};

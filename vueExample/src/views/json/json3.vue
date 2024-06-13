@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div>{{ object1.nameList }}</div>
+    <div>{{ object1.bankList }}</div>
+    <div>{{ object1.age }}</div>
+    <div>{{ object1.test() }}</div>
   </div>
 </template>
 
