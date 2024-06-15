@@ -11,4 +11,6 @@ thenFs
   })
   .then((r3) => {
     console.log(r3);
+  }).catch(error=>{
+    console.log(error)
   });

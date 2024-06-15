@@ -18,16 +18,25 @@ export default {
     };
   },
   created() {
+    console.log("1");
     this.getData();
+    console.log("2");
   },
   methods: {
+    // 13425678
     async getData() {
-      let res = await new Promise((resolve) => {
-        console.log('1')
-        resolve('3')
+      console.log("3");
+      let r1 = await new Promise((resolve) => {
+        console.log("4");
+        resolve("5");
       });
-      console.log(res);
-      console.log("2");
+      console.log(r1);
+      let r2 = await new Promise((resolve) => {
+        console.log("6");
+        resolve("7");
+      });
+      console.log(r2);
+      console.log("8");
     },
   },
 };
