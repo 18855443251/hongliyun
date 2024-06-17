@@ -6,11 +6,11 @@
  * @Description: In User Settings Edit
  * @FilePath: \app空工程\bank\vue.config.js
  */
-const postcssPluginPx2rem = require('postcss-plugin-px2rem')
-const FileManagerPlugin = require('filemanager-webpack-plugin')
+const postcssPluginPx2rem = require("postcss-plugin-px2rem");
+const FileManagerPlugin = require("filemanager-webpack-plugin");
 
 // 打包压缩成zip包
-let filename = 'bank'
+let filename = "bank";
 // 初始化 filemanager-webpack-plugin 插件实例
 let fileManagerPlugin = new FileManagerPlugin({
   onEnd: {
@@ -21,18 +21,21 @@ let fileManagerPlugin = new FileManagerPlugin({
     archive: [
       // 然后我们选择dist文件夹将之打包成dist.zip并放在根目录
       {
-        source: './dist',
+        source: "./dist",
         destination: `./dist/${filename}.zip`,
       },
     ],
   },
-})
+});
 module.exports = {
-  publicPath: './',
+  publicPath: "./",
   outputDir: `./dist/${filename}`,
   productionSourceMap: false, // 生产环境是否生成 SourceMap
   filenameHashing: false, // 生产静态资源是否包含hash
   devServer: {
+    open: true,//自动打开浏览器
+    // port:'8080',//端口默认8080 可以省略 http://localhost:8080/
+    // host:'127.0.0.1',//http://127.0.0.1:8080/
     proxy: {
       "/process": {
         target: "http://30.114.34.37:8089/process", //发财
@@ -41,10 +44,10 @@ module.exports = {
         ws: true,
         changeOrigin: true,
         pathRewrite: {
-          "^/process": "" //代理的路径
-        }
-      }
-    }
+          "^/process": "", //代理的路径
+        },
+      },
+    },
   },
   css: {
     loaderOptions: {
@@ -67,9 +70,9 @@ module.exports = {
     },
   },
   configureWebpack: (config) => {
-    if (process.env.NODE_ENV === 'production') {
-      config['plugins'].push(fileManagerPlugin)
+    if (process.env.NODE_ENV === "production") {
+      config["plugins"].push(fileManagerPlugin);
     }
   },
-}
+};
 console.log("process.env:", process.env.NODE_ENV);
