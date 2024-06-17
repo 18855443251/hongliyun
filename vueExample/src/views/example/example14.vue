@@ -7,13 +7,13 @@
  * @FilePath: \root\bank\src\views\appCenter\appCenter.vue
 -->
 <template>
-  <div ref="main_view" style="background: #f3f3f3">
+  <div ref="main_view">
     <!-- 导航头 -->
     <nav-bar title="应用中心" ref="navBar" rightTitle="管理"></nav-bar>
     <!-- 我的应用 -->
-    <div ref="my-app" class="my_app">
+    <div ref="myApp" class="my_app">
       <p class="title">我的应用</p>
-      <div v-if="myAppList.length > 0">
+      <div>
         <!-- 拖拽 -->
         <draggable
           :options="{ delay: 300 }"
@@ -34,25 +34,17 @@
           </transition-group>
         </draggable>
       </div>
-      <div v-else class="nodata">暂无数据</div>
     </div>
     <!-- 热门应用和推荐应用 -->
-    <slideBar
-      :rmAppList="rmAppList"
-      :tjAppList="tjAppList"
-      ref="slideBar"
-      class="slideBar"
-      @goDetail="goDetail"
-    ></slideBar>
+    <div ref="slideBar" class="slideBar">
+      <div>就很好</div>
+    </div>
     <!-- 应用分类切换 -->
     <div
-      ref="tab-box"
+      ref="tabBox"
       class="tab_box"
       :style="{
-        top:
-          rightTitle == '管理'
-            ? navBarHeight - 2 + 'px'
-            : myAppHeight + navBarHeight + slideBarHeight - 2 + 'px',
+        top: navBarHeight + 'px',
       }"
     >
       <md-tab-bar
@@ -65,15 +57,13 @@
       />
     </div>
     <!-- 应用分类列表 -->
-    <div
-      class="classList"
-      :style="{ paddingBottom: paddingBottom + 20 + 'px' }"
-    >
+    <div class="classList" :style="{ paddingBottom: paddingBottom + 'px' }">
       <div
         class="classList_item"
         v-for="(item, index1) in appClassList"
         :key="index1"
         :ref="item.classId"
+        @click="test"
       >
         <p class="title">{{ item.label }}</p>
         <div class="section_box">
@@ -91,7 +81,7 @@
   </div>
 </template>
 <script>
-import { ActivityIndicator, TabBar } from "mand-mobile";
+import { TabBar } from "mand-mobile";
 import draggable from "vuedraggable";
 import navBar from "@/components/navBar";
 import slideBar from "./components/slideBar";
@@ -102,23 +92,21 @@ export default {
     draggable,
     navBar,
     slideBar,
-    [ActivityIndicator.name]: ActivityIndicator,
     [TabBar.name]: TabBar,
   },
   data() {
     return {
       current: 1, //tab标签索引
-      bgColor: "#f3f3f3", //导航背景颜色
       title: "应用中心",
       leftTitle: "", //取消
       rightTitle: "管理",
       leftImgUrl: require("@/assets/img/agree.png"),
       myAppList: [
-        { appName: "公务用车" },
-        { appName: "公务用车" },
-        { appName: "公务用车" },
-        { appName: "公务用车" },
-        { appName: "公务用车" },
+        { appName: "公务用车1" },
+        { appName: "公务用车2" },
+        { appName: "公务用车3" },
+        { appName: "公务用车4" },
+        { appName: "公务用车5" },
       ], //我的应用
       appClassList: [
         {
@@ -173,20 +161,22 @@ export default {
       navBarHeight: 0, //导航高度
       slideBarHeight: 0, //推荐和热门高度
       tabBoxHeight: 0, //分类标签高度
-      rmAppList: [], //热门应用
-      tjAppList: [], //推荐应用
       scrollTop: "",
-      imgSrc: "",
     };
   },
   mounted() {
+    // 如果是组件获取clientHeight需要加上$el
     this.navBarHeight = this.$refs["navBar"].$el.clientHeight; //导航高度
-    this.slideBarHeight = this.$refs["slideBar"].$el.clientHeight; //推荐和热门高度
+    console.log(this.navBarHeight, "导航高度");
+    this.myAppHeight = this.$refs["myApp"].offsetHeight; //我的应用
+    console.log(this.myAppHeight, "我的应用");
+    this.slideBarHeight = this.$refs["slideBar"].clientHeight; //推荐高度
+    console.log(this.slideBarHeight, "推荐高度");
     this.clientHeight = myTool.client().height; //屏幕高度
-    this.tabBoxHeight = this.$refs["tab-box"].offsetHeight; //分类标签高度
-    setTimeout(() => {
-      this.appclassListCompute();
-    }, 100);
+    this.tabBoxHeight = this.$refs["tabBox"].offsetHeight; //分类标签高度
+    console.log(this.tabBoxHeight, "分类标签高度");
+    // 获取各个模块距离
+    this.getDistance();
     window.addEventListener("scroll", this.viewScroll);
     this.viewFn = debounce(
       (e) => {
@@ -203,46 +193,22 @@ export default {
     getIndex(scrollTop) {
       let lastIndex = this.appClassList.length - 1;
       this.appClassList.forEach((item, index) => {
-        if (this.rightTitle == "管理") {
-          if (
-            scrollTop >= item["offsetEdit"][0] &&
-            scrollTop <= item["offsetEdit"][1]
-          ) {
-            this.current = index + 1;
-            this.paddingBottom =
-              this.clientHeight -
-              this.tabBoxHeight -
-              this.navBarHeight -
-              this.appClassList[lastIndex].offsetEdit[2];
-          }
-        } else if (this.rightTitle == "保存") {
-          if (
-            scrollTop >=
-              item["offsetEdit"][0] - this.myAppHeight - this.slideBarHeight &&
-            scrollTop <=
-              item["offsetEdit"][1] - this.myAppHeight - this.slideBarHeight
-          ) {
-            this.current = index + 1;
-            this.paddingBottom =
-              this.clientHeight -
-              this.tabBoxHeight -
-              this.slideBarHeight -
-              this.myAppHeight -
-              this.navBarHeight -
-              this.appClassList[lastIndex].offsetEdit[2];
-          }
+        if (
+          scrollTop >= item["offsetEdit"][0] &&
+          scrollTop <= item["offsetEdit"][1]
+        ) {
+          this.current = index + 1;
+          this.paddingBottom =
+            this.clientHeight -
+            this.tabBoxHeight -
+            this.navBarHeight -
+            this.appClassList[lastIndex].offsetEdit[2];
         }
       });
     },
     // 滚动
     viewScroll(e) {
       this.viewFn(e);
-    },
-    appclassListCompute() {
-      //获取我的应用高度
-      this.myAppHeight = this.$refs["my-app"].offsetHeight;
-      // 获取各个模块距离
-      this.getDistance();
     },
     //获取每个模块距离页面顶部的距离
     getDistance() {
@@ -255,7 +221,7 @@ export default {
           this.$refs[item.classId][0].offsetTop -
           5 -
           this.tabBoxHeight -
-          this.navBarHeight;
+          this.navBarHeight; //offsetTop是tarbar标签顶端距离最顶部的距离
         offsetHeight = this.$refs[item.classId][0].offsetHeight + 5;
         // 第一项
         if (index == 0) {
@@ -280,93 +246,27 @@ export default {
           offsetTop += offsetHeight;
         }
       });
-    },
-
-    // 管理
-    edit() {
-      this.rightTitle = "保存";
-      this.leftTitle = "取消";
-      this.leftImgUrl = "";
-      this.title = "管理应用";
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    // 保存
-    save() {
-      this.rightTitle = "管理";
-      this.leftImgUrl = require("@/assets/img/agree.png");
-      this.leftTitle = "";
-      this.title = "应用中心";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      console.log(this.appClassList, "呵呵");
     },
     // 开始拖拽
-    startBtn() {
-      this.edit();
-    },
+    startBtn() {},
     endBtn(item) {},
     // 分类标签切换
     tabBtn(item, index) {
       let offsetTop = 0;
-      if (this.rightTitle == "管理") {
-        this.paddingBottom =
-          this.clientHeight -
-          this.tabBoxHeight -
-          this.navBarHeight -
-          item.offsetEdit[2];
-        offsetTop = item.offsetEdit[0];
-      } else if (this.rightTitle == "保存") {
-        this.paddingBottom =
-          this.clientHeight -
-          this.tabBoxHeight -
-          this.slideBarHeight -
-          this.myAppHeight -
-          this.navBarHeight -
-          item.offsetEdit[2];
-        offsetTop = item.offsetEdit[0] - this.myAppHeight - this.slideBarHeight;
-      }
+      this.paddingBottom =
+        this.clientHeight -
+        this.tabBoxHeight -
+        this.navBarHeight -
+        item.offsetEdit[2];
+      offsetTop = item.offsetEdit[0];
       this.$nextTick(() => {
         window.scrollTo({ top: offsetTop, behavior: "smooth" });
       });
     },
-    // 用户点击应用统计
-    statistics(item) {
-      this.$axios
-        .post(
-          "backstageBehaviorAnalysis.do",
-          {
-            appId: item.appId,
-            appName: item.appName,
-            appLogoPc: item.appLogoPc,
-            appLogoApp: item.appLogoApp,
-            appType: item.appType,
-            verVersion: item.verVersion,
-            appStatus: item.appStatus,
-            appDescribe: item.appDescribe,
-            verStatus: item.verStatus,
-            detEmpNo: this.$store.state.userInfo.empid,
-            appPreviewPicture: item.appPreviewPicture,
-            verId: item.verId,
-            relDataDate: item.relDataDate,
-            relStatus: item.relStatus,
-            verDataDate: item.verDataDate,
-          },
-          { disableOverLayShow: true, customErrorHandling: true }
-        )
-        .then((res) => {})
-        .catch((error) => {
-          console.log("处理异常");
-        });
-    },
-    goDetail(item) {
-      if (item.appLogoApp && item.appLogoApp.includes("base64")) {
-        item.appLogoApp = "";
-      }
-      this.statistics(item);
-      this.autoTrackVue({
-        webpage: "我的应用", //页面
-        module: item.appName, //模块
-        action: "我的应用[1级]-" + item.appName, //行为
-      });
-      this.launchStage("bank.appDetail?data=" + JSON.stringify(item));
+    // 随便点击恢复原始状态
+    test() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
 };
@@ -396,7 +296,7 @@ export default {
   width: 686px;
   margin-left: 32px;
   padding: 32px 0;
-  background-color: #ffffff;
+  background-color: #d29292;
   margin-top: 10px;
   border-radius: 8px;
 }
@@ -458,6 +358,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 2;
+  height: 50px;
 }
 .md-tab-bar {
   height: 82px;
