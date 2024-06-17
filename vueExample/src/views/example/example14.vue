@@ -125,6 +125,18 @@ export default {
             {
               appName: "公务用车2",
             },
+            {
+              appName: "公务用车2",
+            },
+            {
+              appName: "公务用车2",
+            },
+            {
+              appName: "公务用车2",
+            },
+            {
+              appName: "公务用车2",
+            },
           ],
         },
         {
@@ -210,27 +222,40 @@ export default {
     },
     //获取每个模块距离页面顶部的距离
     getDistance() {
+      let lastIndex = this.appClassList.length - 1;
       let offsetTop = 0;
       let offsetHeight = 0;
-      for (let i = 0; i < this.appClassList.length; i++) {
-        if (i == 0) {
-          offsetHeight=this.$refs[this.appClassList[i].classId][0].offsetHeight + 5;
-          this.$set(this.appClassList[i], "offsetEdit", [
+      this.appClassList.forEach((item, index) => {
+        // 5是marginTop的距离
+        offsetTop =
+          this.$refs[item.classId][0].offsetTop -
+          5 -
+          this.tabBoxHeight -
+          this.navBarHeight;
+        offsetHeight = this.$refs[item.classId][0].offsetHeight + 5;
+        // 第一项
+        if (index == 0) {
+          this.$set(this.appClassList[index], "offsetEdit", [
             0,
             offsetTop + offsetHeight,
             offsetHeight,
           ]);
+          // 最后一项
+        } else if (index == lastIndex) {
+          this.$set(this.appClassList[index], "offsetEdit", [
+            offsetTop,
+            offsetTop + offsetHeight + this.paddingBottom,
+            offsetHeight,
+          ]);
         } else {
-          offsetTop =
-            this.$refs[this.appClassList[i - 1].classId][0].offsetTop + 5;
-          this.$set(this.appClassList[i], "offsetEdit", [
+          this.$set(this.appClassList[index], "offsetEdit", [
             offsetTop,
             offsetTop + offsetHeight,
             offsetHeight,
           ]);
+          offsetTop += offsetHeight;
         }
-      }
-      console.log(this.appClassList);
+      });
     },
     // 开始拖拽
     startBtn() {},
