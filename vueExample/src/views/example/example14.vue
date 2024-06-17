@@ -84,14 +84,12 @@
 import { TabBar } from "mand-mobile";
 import draggable from "vuedraggable";
 import navBar from "@/components/navBar";
-import slideBar from "./components/slideBar";
 import debounce from "@/utils/debounce.js";
 import "@/utils/mixins/myTool.js";
 export default {
   components: {
     draggable,
     navBar,
-    slideBar,
     [TabBar.name]: TabBar,
   },
   data() {
@@ -155,7 +153,7 @@ export default {
         animation: 200,
       },
       viewFn: null,
-      paddingBottom: 800,
+      paddingBottom: 0,
       clientHeight: 0, //屏幕高度
       myAppHeight: 0, //我的应用高度
       navBarHeight: 0, //导航高度
@@ -212,56 +210,40 @@ export default {
     },
     //获取每个模块距离页面顶部的距离
     getDistance() {
-      let lastIndex = this.appClassList.length - 1;
       let offsetTop = 0;
       let offsetHeight = 0;
-      this.appClassList.forEach((item, index) => {
-        // 5是marginTop的距离
-        offsetTop =
-          this.$refs[item.classId][0].offsetTop -
-          5 -
-          this.tabBoxHeight -
-          this.navBarHeight; //offsetTop是tarbar标签顶端距离最顶部的距离
-        offsetHeight = this.$refs[item.classId][0].offsetHeight + 5;
-        // 第一项
-        if (index == 0) {
-          this.$set(this.appClassList[index], "offsetEdit", [
+      for (let i = 0; i < this.appClassList.length; i++) {
+        if (i == 0) {
+          offsetHeight=this.$refs[this.appClassList[i].classId][0].offsetHeight + 5;
+          this.$set(this.appClassList[i], "offsetEdit", [
             0,
             offsetTop + offsetHeight,
             offsetHeight,
           ]);
-          // 最后一项
-        } else if (index == lastIndex) {
-          this.$set(this.appClassList[index], "offsetEdit", [
-            offsetTop,
-            offsetTop + offsetHeight + this.paddingBottom,
-            offsetHeight,
-          ]);
         } else {
-          this.$set(this.appClassList[index], "offsetEdit", [
+          offsetTop =
+            this.$refs[this.appClassList[i - 1].classId][0].offsetTop + 5;
+          this.$set(this.appClassList[i], "offsetEdit", [
             offsetTop,
             offsetTop + offsetHeight,
             offsetHeight,
           ]);
-          offsetTop += offsetHeight;
         }
-      });
-      console.log(this.appClassList, "呵呵");
+      }
+      console.log(this.appClassList);
     },
     // 开始拖拽
     startBtn() {},
     endBtn(item) {},
     // 分类标签切换
     tabBtn(item, index) {
-      let offsetTop = 0;
       this.paddingBottom =
         this.clientHeight -
         this.tabBoxHeight -
         this.navBarHeight -
         item.offsetEdit[2];
-      offsetTop = item.offsetEdit[0];
       this.$nextTick(() => {
-        window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        window.scrollTo({ top: item.offsetEdit[0], behavior: "smooth" });
       });
     },
     // 随便点击恢复原始状态
