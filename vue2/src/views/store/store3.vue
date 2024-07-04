@@ -14,11 +14,13 @@
     <p>{{ testName }}</p>
     <p>{{ age }}</p>
     <p>{{ cityObj.name }}</p>
+    <p>{{ $store.getters.filterList }}</p>
+    <p>{{filterList}}</p>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions,mapGetters } from "vuex";
 export default {
   name: "home",
   data() {
@@ -34,6 +36,7 @@ export default {
       cityObj: "cityObj",
     }),
     // ...mapState(["age", "name", "cityObj"]),
+    ...mapGetters(['filterList'])
   },
   // computed:mapState(["age", "name",'cityObj']),
   methods: {

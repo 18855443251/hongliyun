@@ -8,8 +8,7 @@
     -->
 <template>
   <div>
-    <div>用户</div>
-    <router-view></router-view>
+    <div>{{ $route.query }}</div>
   </div>
 </template>
 
@@ -17,9 +16,22 @@
 export default {
   name: "right",
   data() {
-    return {};
+    return {
+      redirect: "",
+    };
   },
-  mounted() {},
+  watch: {
+    $route: {
+      handler: function (route) {
+        // console.log(route, "好好");
+        this.redirect = route.query && route.query.redirect;
+      },
+      immediate: true,
+    },
+  },
+  mounted() {
+    console.log(this.$route.query, "query");
+  },
 
   methods: {},
 };

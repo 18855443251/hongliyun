@@ -11,6 +11,10 @@
     <div>
       <div>接收参数</div>
       <div>{{ $route.params.name }}</div>
+      <router-link :to="`/user1/${$route.params.name}/uesrSon1`"
+        >用户</router-link
+      >
+      <!-- <router-link to="uesrSon1" append>用户</router-link> -->
     </div>
   </div>
 </template>
@@ -19,10 +23,21 @@
 export default {
   name: "right",
   data() {
-    return {};
+    return {
+      redirect: "",
+    };
+  },
+  watch: {
+    $route: {
+      handler: function (route) {
+        console.log(route, "好好");
+        this.redirect = route.query && route.query.redirect;
+      },
+      immediate: true,
+    },
   },
   mounted() {
-    console.log(this.$route.params)
+    console.log(this.$route.params);
   },
 
   methods: {},

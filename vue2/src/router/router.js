@@ -1,23 +1,37 @@
 // 正则处理
 export default [
+  // params1后面的参数可传可不传
   {
-    name: "router1",
-    path: "/router1",
+    name: "params1",
+    path: "/params1/:name?",
     component: () =>
-      import(/* webpackChunkName: "rep" */ "@/views/router/router1.vue"),
+      import(/* webpackChunkName: "rep" */ "@/views/router/params1.vue"),
+  },
+  {
+    name: "query1",
+    path: "/query1",
+    component: () =>
+      import(/* webpackChunkName: "rep" */ "@/views/router/query1.vue"),
+  },
+  {
+    name: "routerQ1",
+    path: "/routerQ1",
+    component: () =>
+      import(/* webpackChunkName: "rep" */ "@/views/router/routerQ1.vue"),
     meta: {
       isLogin: true,
     },
   },
   {
-    name: "router2",
-    path: "/router2",
+    name: "routerP1",
+    path: "/routerP1",
     component: () =>
-      import(/* webpackChunkName: "rep" */ "@/views/router/router2.vue"),
+      import(/* webpackChunkName: "rep" */ "@/views/router/routerP1.vue"),
     meta: {
       isLogin: true,
     },
   },
+
   {
     name: "user1",
     path: "/user1/:username",
@@ -38,18 +52,18 @@ export default [
     component: () =>
       import(/* webpackChunkName: "rep" */ "@/views/router/main.vue"),
     redirect: {
-      name: "left",
+      path: "/right",
     },
     children: [
       {
         name: "left",
-        path: "left",
+        path: "/left",
         component: () =>
           import(/* webpackChunkName: "rep" */ "@/views/router/left.vue"),
       },
       {
         name: "right",
-        path: "right",
+        path: "/right",
         component: () =>
           import(/* webpackChunkName: "rep" */ "@/views/router/right.vue"),
       },
@@ -58,7 +72,6 @@ export default [
   {
     name: "detail",
     path: "/detail/:username/ages/:age",
-    // path: "/detail/:id",
     meta: {
       title: "详情页面",
       keepAlive: true, // 不需要缓存

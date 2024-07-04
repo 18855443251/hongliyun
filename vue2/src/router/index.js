@@ -19,7 +19,7 @@ import answer from "@/views/answer";
 import dioAlert from "@/views/dioAlert";
 import test180 from "@/views/test180";
 import legalRisk from "@/views/legalRisk/legalRisk";
-
+import error from "@/views/error";
 // 关键字
 import filter from "@/views/pipei/filter";
 
@@ -274,10 +274,15 @@ const routes = [
   ...mixins,
   ...jilei,
   ...secondRouter,
-  ...directives1
+  ...directives1,
   // ...table
+  {
+    path: "*",
+    component: error,
+  },
 ];
 const router = new VueRouter({
+  // mode:'history',
   routes,
 });
 // router.beforeEach((to, from, next) => {

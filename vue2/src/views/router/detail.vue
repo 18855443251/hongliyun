@@ -25,20 +25,17 @@ export default {
     };
   },
   mounted() {
-    console.log("第一种获取方式：", this.$route.params); //{id: '001'}
+    console.log("第一种获取方式：", this.$route.params); //{username: '张三', age: '18'}
   },
   beforeRouteEnter(to, from, next) {
     if (to.params) {
-      console.log("第三种获取方式：", to.params); //{id: '001'}
-      console.log(to.meta);
-      console.log(document.documentElement.scrollTop, "scrollTop");
+      console.log("第三种获取方式：", to.params); //{username: '张三', age: '18'}
       next((vm) => {
         // console.log(vm.message, "message");
         // console.log(vm.$store.state.name, "name");
         // vm.$nextTick(() => {
         //   console.log(document.getElementsByClassName("test")[0]);
         // });
-        console.log(from, "from");
         // vm.goErrorPage(next);
         // 通过 `vm` 访问组件实例 相当于this
         // 此处可以请求数据
@@ -66,7 +63,7 @@ export default {
   watch: {
     $route: {
       handler(newV, oldV) {
-        console.log("第二种获取方式：", newV.params); //{id: '001'}
+        console.log("第二种获取方式：", newV.params); //{username: '张三', age: '18'}
       },
       immediate: true,
     },
@@ -82,7 +79,7 @@ export default {
       });
     },
     test() {
-      this.jump("/router1");
+      this.jump("/routerQ1");
     },
   },
 };

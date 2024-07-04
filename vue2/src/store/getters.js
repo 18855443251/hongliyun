@@ -12,4 +12,10 @@ export default {
   age: (state) => {
     return state.user.age;
   },
+  // 注意：
+  // (1) getters函数的第一个参数是 state
+  // (2) getters函数必须要有返回值
+  filterList(state) {
+    return state.list.filter((item) => item > 5);
+  },
 };

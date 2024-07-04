@@ -3,6 +3,7 @@ export default {
   overLayShow: false, //遮罩
   history: [],
   isIosMoveBack: false,
+  list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   userInfo: {
     orgCode: "01143",
     userId: "55012", //57281

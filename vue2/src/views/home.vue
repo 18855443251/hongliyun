@@ -127,11 +127,7 @@ export default {
       // this.$router.push("/router1");
     },
     dongLuyou() {
-      // this.$router.push({ path: "/detail/001" });
-      this.$router.push({
-        path: "/detail/张三/ages/18",
-        // query: { username: "张三" },
-      });
+     
     },
   },
 };
