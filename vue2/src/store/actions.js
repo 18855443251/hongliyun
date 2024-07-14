@@ -8,8 +8,9 @@ export default {
     commit("RESET_STATE");
   },
   // 提交lockNum
-  setLockNum({ commit }, lockNum) {
-    commit("SET_LOCK_NUM", lockNum);
+  setLockNum(context1, lockNum) {
+    // console.log(context1,'哈哈哈')
+    context1.commit("SET_LOCK_NUM", lockNum);
   },
   // setLockNum(context, lockNum) {
   //   setTimeout(() => {

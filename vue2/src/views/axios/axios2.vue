@@ -7,7 +7,12 @@
  * @FilePath: \vueDemo\src\views\arr\hebingArr.vue
 -->
 <template>
-  <div></div>
+  <div>
+    <div @click="test">发送get请求</div>
+    <div @click="test2">发送post请求</div>
+    <div @click="test3">发送put请求</div>
+    <div @click="test4">发送delete请求</div>
+  </div>
 </template>
 
 <script>
@@ -17,59 +22,45 @@ export default {
   data() {
     return {};
   },
-  created() {
-    this.test();
-    // this.test1();
-    // this.test2();
-    // this.test3();
-  },
+  created() {},
   methods: {
     test() {
-      axios
-        .get("/user?ID=12345&name=张三")
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      axios({
+        url: "http://localhost:3000/posts",
+        method: "get",
+      }).then((res) => {
+        console.log(res);
+      });
     },
-    test1() {
-      axios
-        .get("/user", {
-          params: {
-            ID: "12345",
-            name: "中文",
-          },
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
+    // test1() {
+    //   axios.get("http://localhost:3000/posts").then((res) => {
+    //     console.log(res);
+    //   });
+    // },
     test2() {
-      axios
-        .post("/user", {
-          firstName: "Fred",
-          lastName: "Flintstone",
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      axios({
+        url: "http://localhost:3000/posts",
+        method: "post",
+        data: { title: "王五", views: "300" },
+      }).then((res) => {
+        console.log(res);
+      });
     },
     test3() {
-      // 获取远端图片
       axios({
-        method: "get",
-        url: "http://bit.ly/2mTM3nY",
-        responseType: "stream",
-      }).then(function (response) {
-        console.log("jj")
+        url: "http://localhost:3000/posts/1",
+        method: "put",
+        data: { title: "赵六", views: "300" },
+      }).then((res) => {
+        console.log(res);
+      });
+    },
+    test4() {
+      axios({
+        url: "http://localhost:3000/posts/fa78",
+        method: "delete",
+      }).then((res) => {
+        console.log(res);
       });
     },
   },

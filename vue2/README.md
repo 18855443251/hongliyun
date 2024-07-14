@@ -17,3 +17,4 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+json-server --watch index.json -d 3000

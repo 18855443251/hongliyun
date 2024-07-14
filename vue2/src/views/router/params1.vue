@@ -10,7 +10,7 @@
   <div id="card">
     <div>
       <div>接收参数</div>
-      <div>{{ $route.params.name }}</div>
+      <div>{{ $route.params }}</div>
       <router-link :to="`/user1/${$route.params.name}/uesrSon1`"
         >用户</router-link
       >

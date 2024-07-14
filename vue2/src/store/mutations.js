@@ -88,8 +88,8 @@ export default {
     state.logoutNum = logoutNum;
   },
   // 设置名字
-  SET_NAME: (state, name) => {
-    state.name = name;
+  SET_NAME: (state1, name) => {
+    state1.name = name;
   },
   SET_NOW_MENUID: (state, menuId) => {
     sessionStorage.setItem("nowMenuId", menuId);

@@ -16,6 +16,7 @@
     <p>{{ cityObj.name }}</p>
     <p>{{ $store.getters.filterList }}</p>
     <p>{{filterList}}</p>
+    <p>{{$store.getters.getList }}</p>
   </div>
 </template>
 

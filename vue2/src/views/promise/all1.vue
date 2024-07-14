@@ -21,6 +21,7 @@ export default {
     let a1 = this.test1();
     let a2 = this.test2();
     let a3 = this.test3();
+    console.log(a1,'gg')
     //Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调
     //all接收一个数组参数，里面的值最终都算返回Promise对象
     //all会把所有异步操作的结果放进一个数组中传给then，就是下面的results

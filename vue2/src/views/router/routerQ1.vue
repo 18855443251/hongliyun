@@ -27,12 +27,14 @@ export default {
   mounted() {},
   methods: {
     test1() {
+      // this.$router.replace('/query1')
       // this.$router.push(`/params1?key=${this.key}&name=${this.name}`);
-      this.$router.push({
-        path: "/params1",
+      this.$router.replace({
+        path: "/query1",
         query: {
           key: "黑马",
           name: "张三",
+          backUrl: this.$route.fullPath,
         },
       });
     },

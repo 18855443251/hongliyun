@@ -47,7 +47,6 @@ export default {
     test3() {
       this.$router.push({
         path: "/detail/张三/ages/18",
-        // query: { username: "张三" },
       });
     },
   },

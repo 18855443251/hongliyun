@@ -18,4 +18,7 @@ export default {
   filterList(state) {
     return state.list.filter((item) => item > 5);
   },
+  getList(state,getters){
+    return getters.filterList.length
+  }
 };
