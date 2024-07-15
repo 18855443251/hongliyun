@@ -1,6 +1,5 @@
 // 对axios的实例重新封装成一个plugin ,方便 Vue.use(xxxx)
 import apiList from './interface'
-
 const install = Vue => {
   if (install.installed)
     return;

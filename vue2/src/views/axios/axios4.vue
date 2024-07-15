@@ -25,7 +25,7 @@ export default {
   methods: {
     test() {
       // axios的默认配置
-      axios.defaults.baseURL = "http://localhost:3000/";
+      axios.defaults.baseURL = "http://localhost:3000/process";
       axios.defaults.method = "post";
       axios.defaults.timeout = "3000";
       axios({

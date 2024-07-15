@@ -12,8 +12,8 @@ import router from "./router";
 import store from "./store";
 import mixins from "./utils/mixins";
 import filter from "./utils/filter";
-import func from './utils/func'
-import utils from './utils'
+import func from "./utils/func";
+import utils from "./utils";
 import navBar from "@/components/navBar";
 import directives from "./directives";
 // 第一种引入方式 过滤器单独分开写，没有放在同一个index.js里面
@@ -22,18 +22,20 @@ import directives from "./directives";
 //     Vue.filter(key, filters[key])
 // })
 import axiosPlugin from "./utils/axios";
-import '@/assets/ttf/font.css'
+// import axios from "axios";
+// Vue.prototype.$axios=axios 就可以通过this.$axios调用
+import "@/assets/ttf/font.css";
 import "@/assets/css/common.less";
 Vue.use(utils, {
-  ...func
-})
+  ...func,
+});
 import clipboard from "vue-clipboard2";
 Vue.mixin(mixins);
 Vue.use(axiosPlugin);
 Vue.use(clipboard);
 // 全局注册组件navBar
-Vue.component('navBar',navBar)
-Vue.use(directives)
+Vue.component("navBar", navBar);
+Vue.use(directives);
 for (let [key, value] of Object.entries(filter)) {
   Vue.filter(key, value);
 }
@@ -44,12 +46,12 @@ Vue.use(router);
 //   Vue.$router.backward()
 // }, false);
 
-Vue.prototype.$imgSrc = 'http://192.168.52.151:7770/';
+Vue.prototype.$imgSrc = "http://192.168.52.151:7770/";
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

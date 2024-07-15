@@ -8,9 +8,11 @@
 -->
 <template>
   <div>
+    <!-- 对象形式 -->
     <div @click="test">发送get请求</div>
-    <div @click="test1">发送get请求</div>
     <div @click="test2">发送post请求</div>
+    <div @click="test3">发送put请求</div>
+    <div @click="test4">发送delete请求</div>
   </div>
 </template>
 
@@ -21,17 +23,12 @@ export default {
   data() {
     return {};
   },
+  created() {},
   methods: {
     test() {
-      axios.get("http://localhost:3000/posts").then((res) => {
-        console.log(res);
-      });
-    },
-    test1() {
       axios
-        .request({
-          url: "http://localhost:3000/posts",
-          method: "get",
+        .get("http://localhost:3000/posts", {
+          id: "1",
         })
         .then((res) => {
           console.log(res);
@@ -40,12 +37,25 @@ export default {
     test2() {
       axios
         .post("http://localhost:3000/posts", {
-          title: "账上",
+          id: "3",
+          title: "王五",
           views: "300",
         })
         .then((res) => {
           console.log(res);
         });
+    },
+    test3() {
+      axios
+        .put("http://localhost:3000/posts/1", { title: "赵六好", views: "300" })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    test4() {
+      axios.delete("http://localhost:3000/posts/3").then((res) => {
+        console.log(res);
+      });
     },
   },
 };

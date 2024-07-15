@@ -8,6 +8,7 @@
 -->
 <template>
   <div>
+    <!-- 函数形式 -->
     <div @click="test">发送get请求</div>
     <div @click="test2">发送post请求</div>
     <div @click="test3">发送put请求</div>
@@ -28,20 +29,18 @@ export default {
       axios({
         url: "http://localhost:3000/posts",
         method: "get",
+        params: {
+          id: "1",
+        },
       }).then((res) => {
         console.log(res);
       });
     },
-    // test1() {
-    //   axios.get("http://localhost:3000/posts").then((res) => {
-    //     console.log(res);
-    //   });
-    // },
     test2() {
       axios({
         url: "http://localhost:3000/posts",
         method: "post",
-        data: { title: "王五", views: "300" },
+        data: { id: "3", title: "王五", views: "300" },
       }).then((res) => {
         console.log(res);
       });
@@ -50,14 +49,14 @@ export default {
       axios({
         url: "http://localhost:3000/posts/1",
         method: "put",
-        data: { title: "赵六", views: "300" },
+        data: { title: "赵六好", views: "300" },
       }).then((res) => {
         console.log(res);
       });
     },
     test4() {
       axios({
-        url: "http://localhost:3000/posts/fa78",
+        url: "http://localhost:3000/posts/3",
         method: "delete",
       }).then((res) => {
         console.log(res);
