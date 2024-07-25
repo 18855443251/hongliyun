@@ -38,7 +38,7 @@ module.exports = {
     // host:'127.0.0.1',//http://127.0.0.1:8080/
     proxy: {
       "/process": {
-        target: "http://30.664.34.36:7777/process", //发财
+        target: "http://localhost:3000/process", //发财
         ws: true,
         changeOrigin: true,
         pathRewrite: {

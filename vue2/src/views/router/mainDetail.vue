@@ -7,29 +7,22 @@
  * @FilePath: \vueDemo\src\views\reg\replace1.vue
     -->
 <template>
-  <div id="card">
-    <div>
-      <div @click="test">左测试</div>
-    </div>
+  <div>
+    <div>详情</div>
+    <div>{{ $route.params }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "left",
+  name: "mainDetail",
   data() {
-    return {
-      redirect: "",
-    };
+    return {};
   },
+
   mounted() {},
 
-  methods: {
-    test() {
-      let id = 1;
-      this.$router.push("/main/mainDetail/" + id);
-    },
-  },
+  methods: {},
 };
 </script>
 

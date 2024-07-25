@@ -37,6 +37,12 @@ export default [
       import(/* webpackChunkName: "swiper" */ "@/views/zujian/father6.vue"),
   },
   {
+    name: "father7",
+    path: "/father7",
+    component: () =>
+      import(/* webpackChunkName: "swiper" */ "@/views/zujian/father7.vue"),
+  },
+  {
     name: "provide1",
     path: "/provide1",
     component: () =>

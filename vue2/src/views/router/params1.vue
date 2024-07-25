@@ -29,9 +29,9 @@ export default {
   },
   watch: {
     $route: {
-      handler: function (route) {
-        console.log(route, "好好");
-        this.redirect = route.query && route.query.redirect;
+      handler: function (to,from) {
+        console.log(to.name,from.name, "好好");
+        this.redirect = to.query && to.query.redirect;
       },
       immediate: true,
     },

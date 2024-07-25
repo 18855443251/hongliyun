@@ -8,16 +8,16 @@
  */
 export default [
   {
+    name: "attribute1",
+    path: "/attribute1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/attribute1.vue"),
+  },
+  {
     name: "dom1",
     path: "/dom1",
     component: () =>
       import(/* webpackChunkName: "date" */ "@/views/dom/dom1.vue"),
-  },
-  {
-    name: "dom2",
-    path: "/dom2",
-    component: () =>
-      import(/* webpackChunkName: "date" */ "@/views/dom/dom2.vue"),
   },
   {
     name: "dom3",
@@ -150,5 +150,49 @@ export default [
     path: "/dom24",
     component: () =>
       import(/* webpackChunkName: "date" */ "@/views/dom/dom24.vue"),
+  },
+  {
+    name: "querySelector1",
+    path: "/querySelector1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/querySelector1.vue"),
+  },
+  {
+    name: "querySelectorAll1",
+    path: "/querySelectorAll1",
+    component: () =>
+      import(
+        /* webpackChunkName: "date" */ "@/views/dom/querySelectorAll1.vue"
+      ),
+  },
+  {
+    name: "getElementById1",
+    path: "/getElementById1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/getElementById1.vue"),
+  },
+  {
+    name: "getElementsByTagName1",
+    path: "/getElementsByTagName1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/getElementsByTagName1.vue"),
+  },
+  {
+    name: "getElementsByClassName1",
+    path: "/getElementsByClassName1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/getElementsByClassName1.vue"),
+  },
+  {
+    name: "className1",
+    path: "/className1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/className1.vue"),
+  },
+  {
+    name: "classList1",
+    path: "/classList1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/classList1.vue"),
   },
 ];

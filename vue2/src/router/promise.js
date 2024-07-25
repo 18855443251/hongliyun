@@ -13,7 +13,10 @@ const promise5 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/promise5");
 const await4 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/await4");
-
+const await5 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/await5");
+const await6 = () =>
+  import(/* webpackChunkName: "string" */ "@/views/promise/await6");
 const then1 = () =>
   import(/* webpackChunkName: "string" */ "@/views/promise/then1");
 const then2 = () =>
@@ -45,6 +48,16 @@ export default [
     name: "await4",
     path: "/await4",
     component: await4,
+  },
+  {
+    name: "await5",
+    path: "/await5",
+    component: await5,
+  },
+  {
+    name: "await6",
+    path: "/await6",
+    component: await6,
   },
   {
     name: "then1",

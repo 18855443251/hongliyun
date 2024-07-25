@@ -23,6 +23,7 @@ import directives from "./directives";
 // })
 import axiosPlugin from "./utils/axios";
 // import axios from "axios";
+// axios.defaults.baseURL = "http://localhost:3000/process";
 // Vue.prototype.$axios=axios 就可以通过this.$axios调用
 import "@/assets/ttf/font.css";
 import "@/assets/css/common.less";

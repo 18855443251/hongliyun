@@ -14,7 +14,7 @@
   </div>
 </template>
 <script>
-import test from "./components/test6";
+import test from "./components/test5";
 export default {
   components: { test },
   name: "Login",

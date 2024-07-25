@@ -7,29 +7,26 @@
  * @FilePath: \vueDemo\src\views\reg\replace1.vue
     -->
 <template>
-  <div id="card">
-    <div>
-      <div @click="test">左测试</div>
-    </div>
+  <div>
+    <p class="test">标签1</p>
+    <p class="test">标签2</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "left",
+  name: "home",
   data() {
-    return {
-      redirect: "",
-    };
+    return {};
   },
-  mounted() {},
-
-  methods: {
-    test() {
-      let id = 1;
-      this.$router.push("/main/mainDetail/" + id);
-    },
+  mounted() {
+    let p1 = document.getElementsByClassName("test");
+    for (let i = 0; i < p1.length; i++) {
+      p1[i].style.color = "red";
+    }
+    console.log(p1);
   },
+  methods: {},
 };
 </script>
 

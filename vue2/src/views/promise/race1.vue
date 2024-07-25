@@ -19,11 +19,13 @@ export default {
   },
   created() {
     let a1 = this.test1();
+    console.log(a1)
     let a2 = this.test2();
     let a3 = this.test3();
     // race方法「谁跑的快，以谁为准执行回调
     // race接收一个数组参数，里面的值最终都算返回Promise对象
     // raace会把所有异步操作的结果放进一个数组中传给then，就是下面的results
+    let c=Promise.race([a1, a2, a3])
     Promise.race([a1, a2, a3])
       .then((result) => {
         console.log(result);

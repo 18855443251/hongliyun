@@ -63,6 +63,9 @@ export default {
   //   },
   // },
   mounted() {
+    window.onhashchange = () => {
+      console.log(location.hash, "路由");
+    };
     // 登录人信息,登录后才有的信息
     // if (context.sessionGetString("loginInfo")) {
     //   this.$store.state.userInfo = JSON.parse(

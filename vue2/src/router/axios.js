@@ -41,4 +41,10 @@ export default [
     component: () =>
       import(/* webpackChunkName: "my" */ "@/views/axios/axios7.vue"),
   },
+  {
+    name: "axios8",
+    path: "/axios8",
+    component: () =>
+      import(/* webpackChunkName: "my" */ "@/views/axios/axios8.vue"),
+  },
 ];

@@ -26,14 +26,16 @@ export default {
   created() {},
   methods: {
     test() {
-      axios({
+      let a = axios({
         url: "http://localhost:3000/posts",
         method: "get",
         params: {
           id: "1",
         },
-      }).then((res) => {
-        console.log(res);
+      });
+      console.log(a,'刚刚')//返回的是一个promise对象
+      a.then((res) => {
+        console.log(res,'和');
       });
     },
     test2() {

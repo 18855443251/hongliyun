@@ -2,7 +2,6 @@
 <template>
   <div class="cardBox_view">
     <div v-for="(item,index) in tableList" :key="index">
-     <span>{{item.name}}</span>
      <slot :tableList="tableList"></slot>
     </div>
   </div>

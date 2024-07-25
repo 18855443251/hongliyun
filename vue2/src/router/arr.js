@@ -9,7 +9,8 @@
 const arr1 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr1.vue"); // 通讯录
 const arr2 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr2.vue"); // 通讯录
 const arr3 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr3.vue"); // 通讯录
-const ArrayPrototype = () => import(/* webpackChunkName: "my" */ "@/views/arr/ArrayPrototype.vue"); // 通讯录
+const ArrayPrototype = () =>
+  import(/* webpackChunkName: "my" */ "@/views/arr/ArrayPrototype.vue"); // 通讯录
 const arr5 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr5.vue"); // 通讯录
 const arrbianli = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/arrbianli.vue"); // 通讯录
@@ -39,6 +40,8 @@ const flat1 = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/flat1.vue"); // 通讯录
 const reduce1 = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/reduce1.vue"); // 通讯录
+const reduce2 = () =>
+  import(/* webpackChunkName: "my" */ "@/views/arr/reduce2.vue"); // 通讯录
 const at = () => import(/* webpackChunkName: "my" */ "@/views/arr/at.vue"); // 通讯录
 const cancat = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/cancat.vue"); // 通讯录
@@ -150,6 +153,11 @@ export default [
     name: "reduce1",
     path: "/reduce1",
     component: reduce1,
+  },
+  {
+    name: "reduce2",
+    path: "/reduce2",
+    component: reduce2,
   },
   {
     name: "at",

@@ -31,10 +31,10 @@ export default {
 
   methods: {
     leftBtn() {
-      this.$router.push("/left");
+      this.$router.push("/main/left");
     },
     rightBtn() {
-      this.$router.push("/right");
+      this.$router.push("/main/right");
     },
   },
 };

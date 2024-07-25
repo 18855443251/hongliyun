@@ -7,29 +7,25 @@
  * @FilePath: \vueDemo\src\views\reg\replace1.vue
     -->
 <template>
-  <div id="card">
-    <div>
-      <div @click="test">左测试</div>
-    </div>
+  <div>
+    <div id="test">id选择器1</div>
+    <p>标签</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "left",
+  name: "home",
   data() {
-    return {
-      redirect: "",
-    };
+    return {};
   },
-  mounted() {},
-
-  methods: {
-    test() {
-      let id = 1;
-      this.$router.push("/main/mainDetail/" + id);
-    },
+  mounted() {
+    // 直接获取元素
+    let div = document.getElementById("test");
+    div.style.color = "red";
+    console.log(div);
   },
+  methods: {},
 };
 </script>
 

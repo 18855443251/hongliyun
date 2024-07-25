@@ -18,13 +18,13 @@ export default {
     };
   },
   created() {
-    this.getData1();
-    // this.doIt();
+    // this.getData1();
+    this.doIt();
   },
   methods: {
     doIt() {
       console.log("doIt");
-      const time1 = 300;
+      const time1 = 1000;
       this.test(time1)
         .then((time2) => this.test(time2))
         .then((time3) => this.test(time3))

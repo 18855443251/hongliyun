@@ -1,9 +1,8 @@
 
 <template>
   <div class="cardBox_view">
-    <div v-for="(item,index) in tableList" :key="index">
-     <span>{{item.name}}</span>
-     <slot :option1="item"></slot>
+    <div v-for="(item, index) in tableList" :key="index">
+      <slot :option1="item"></slot>
     </div>
   </div>
 </template>
@@ -12,16 +11,14 @@ export default {
   name: "Login",
   data() {
     return {
-      tableList:[
+      tableList: [
         {
-          name:"张三",
-          desc:"好好"
+          desc: "张三",
         },
-          {
-          name:"李四",
-          desc:"好快"
-        }
-      ]
+        {
+          desc: "李四",
+        },
+      ],
     };
   },
 

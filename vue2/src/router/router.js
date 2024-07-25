@@ -52,20 +52,26 @@ export default [
     component: () =>
       import(/* webpackChunkName: "rep" */ "@/views/router/main.vue"),
     redirect: {
-      path: "/right",
+      path: "/main/right",
     },
     children: [
       {
         name: "left",
-        path: "/left",
+        path: "left",
         component: () =>
           import(/* webpackChunkName: "rep" */ "@/views/router/left.vue"),
       },
       {
         name: "right",
-        path: "/right",
+        path: "right",
         component: () =>
           import(/* webpackChunkName: "rep" */ "@/views/router/right.vue"),
+      },
+      {
+        name: "mainDetail",
+        path: "mainDetail/:id",
+        component: () =>
+          import(/* webpackChunkName: "rep" */ "@/views/router/mainDetail.vue"),
       },
     ],
   },
