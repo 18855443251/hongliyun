@@ -174,4 +174,16 @@ export default [
     path: "/constructor",
     component: constructor,
   },
+  {
+    name: "forEach2",
+    path: "/forEach2",
+    component: () =>
+      import(/* webpackChunkName: "my" */ "@/views/arr/forEach2.vue"),
+  },
+  {
+    name: "forEach3",
+    path: "/forEach3",
+    component: () =>
+      import(/* webpackChunkName: "my" */ "@/views/arr/forEach3.vue"),
+  },
 ];

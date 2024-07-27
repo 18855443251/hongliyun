@@ -52,12 +52,7 @@ export default [{
     name: "scroller1",
     path: "/scroller1",
     component: () => import( /* webpackChunkName: "fenye" */ "@/views/shijian/scroller1.vue"),
-  },
-  {
-    name: "client",
-    path: "/client",
-    component: () => import( /* webpackChunkName: "fenye" */ "@/views/shijian/client.vue"),
-  }, {
+  },{
     name: "client1",
     path: "/client1",
     component: () => import( /* webpackChunkName: "fenye" */ "@/views/shijian/client1.vue"),
@@ -73,5 +68,10 @@ export default [{
     name: "keyup",
     path: "/keyup",
     component: () => import( /* webpackChunkName: "fenye" */ "@/views/shijian/keyup.vue"),
+  },
+  {
+    name: "getBoundingClientRect1",
+    path: "/getBoundingClientRect1",
+    component: () => import( /* webpackChunkName: "fenye" */ "@/views/shijian/getBoundingClientRect1.vue"),
   }
 ]

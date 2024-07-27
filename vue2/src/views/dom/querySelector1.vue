@@ -26,7 +26,7 @@ export default {
     let div = document.querySelector(".test");
     div.style.color = "red";
     // div.innerHTML = "<strong>改变内容</strong>";//能解析标签
-    div.innerText = "<strong>改变内容</strong>";//不能解析标签
+    div.innerText = "<strong>改变内容</strong>"; //不能解析标签
     console.log(div);
   },
   methods: {},

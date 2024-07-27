@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="(item, index) in newBankList" :key="index">
-      {{ item.phone }}/{{ item.Bankname }}
-    </div>
+    <!-- <div>{{ newArr }}</div> -->
+    <!-- <input id="demo" type="text" v-model="name" /> -->
+    <div>就很好</div>
   </div>
 </template>
 
@@ -11,29 +11,34 @@ export default {
   name: "home",
   data() {
     return {
-      newList: [
-        { Bankname: "张三", age: 55 },
-        { Bankname: "李四", age: 14 },
-      ],
-      playerList1: [
-        { phone: "188555", add: "北京" },
-        { phone: "99555", add: "广州" },
-      ],
-      newBankList: [
-        // { phone: "188555", add: "北京" },
-        // { phone: "99555", add: "广州" },
-        // { Bankname: "张三", age: 55 },
-        // { Bankname: "李四", age: 14 }
-      ],
+      // 数组去重
+      newArr: [1, 5, 5, 9, 2, 8],
     };
   },
   created() {
-    this.formatBankList(this.newList);
+    // this.test()
+    // this.test1();
+    this.test2();
   },
   methods: {
-    formatBankList(newList) {
-      this.newBankList = [...this.playerList1, ...newList];
-      console.log(JSON.stringify(this.newBankList));
+    test() {
+      let a = [...new Set(this.newArr)];
+      console.log(a);
+    },
+    test1() {
+      let a = [];
+      for (let item of this.newArr) {
+        if (a.indexOf(item) == -1) {
+          a.push(item);
+        }
+      }
+      console.log(a);
+    },
+    test2() {
+      let a = this.newArr.filter((item, index, arr) => {
+        return arr.indexOf(item) === index;
+      });
+      console.log(a);
     },
   },
 };

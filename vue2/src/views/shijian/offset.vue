@@ -35,8 +35,8 @@ export default {
 
 <style scoped>
 #father {
-  /* width: 500px;
-  height: 300px; */
+  width: 500px;
+  height: 300px;
   padding: 10px;
   border: 5px solid rgb(42, 38, 38);
   background-color: salmon;

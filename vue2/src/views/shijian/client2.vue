@@ -47,5 +47,6 @@ export default {
 #card {
   width: 600px;
   height: 1200px;
+  background: rgb(168, 168, 219);
 }
 </style>

@@ -17,13 +17,17 @@ export default {
   name: "claneCache",
   components: { navBar },
   data() {
-    return {};
+    return {
+      arr: ["真嘎和", "呵呵", "好"],
+    };
   },
   created() {
-    function fn(){
-      console.log(100)
+    for (let item of this.arr) {
+      if (item == "呵呵") {
+        return;
+      }
+      console.log(item,'ss2')
     }
-    console.log(fn())
   },
   methods: {
     test() {},

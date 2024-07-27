@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(item, index) in newList" :key="index">{{ item.Bankname }}</div>
+    <div>{{ oldList }}</div>
   </div>
 </template>
 
@@ -18,9 +18,7 @@ export default {
     };
   },
   created() {
-    // this.test();
-    // this.test1();
-    this.test2();
+    this.test();
   },
   methods: {
     test() {
@@ -33,36 +31,10 @@ export default {
       this.oldList.forEach((item, index, arr) => {
         if (item.Bankname == "李四") {
           item.Bankname = "修改";
-          // return;
+          return;
         }
-        console.log(item, "当前项"); //会打印两次
+        console.log(item.Bankname, "当前项"); //会打印两次
       });
-      this.newList = this.oldList;
-      console.log(this.oldList, "修改item里的属性会改变原数组");
-    },
-    test1() {
-       this.oldList.forEach((item, index, arr) => {
-        //  let obj=JSON.parse(JSON.stringify(item));//深拷贝不会改变原始数组oldList,不会改变arr
-        let obj=item;//浅拷贝会改变原始数组oldList,也会改变arr
-        obj.value=index;
-        obj.Bankname="借记卡";
-        // return obj //没有返回值不能这样写
-      });
-      this.newList=this.oldList
-      console.log(this.newList, "原始数组oldList改变,newList跟着改变"); 
-    },
-    test2() {
-      // try/catch可以让js代码遇到错误了也可以执行下去
-      try {
-        this.oldList.forEach((item) => {
-          if (item.Bankname == "李四") {
-            throw "遇到李四才终止循环";
-          }
-          console.log(item, "当前项"); //会打印一次
-        });
-      } catch (e) {
-        console.log("catch-" + e); //会被打印
-      }
     },
   },
 };
