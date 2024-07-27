@@ -33,7 +33,7 @@ export default {
       a.setAttribute("download", decodeURIComponent("测试"));
       document.body.appendChild(a);
       a.click();
-      document.body.removeChild(a);
+      // document.body.removeChild(a);
     },
   },
 };

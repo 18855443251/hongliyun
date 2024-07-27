@@ -175,13 +175,17 @@ export default [
     name: "getElementsByTagName1",
     path: "/getElementsByTagName1",
     component: () =>
-      import(/* webpackChunkName: "date" */ "@/views/dom/getElementsByTagName1.vue"),
+      import(
+        /* webpackChunkName: "date" */ "@/views/dom/getElementsByTagName1.vue"
+      ),
   },
   {
     name: "getElementsByClassName1",
     path: "/getElementsByClassName1",
     component: () =>
-      import(/* webpackChunkName: "date" */ "@/views/dom/getElementsByClassName1.vue"),
+      import(
+        /* webpackChunkName: "date" */ "@/views/dom/getElementsByClassName1.vue"
+      ),
   },
   {
     name: "className1",
@@ -194,5 +198,57 @@ export default [
     path: "/classList1",
     component: () =>
       import(/* webpackChunkName: "date" */ "@/views/dom/classList1.vue"),
+  },
+  {
+    name: "parentNode1",
+    path: "/parentNode1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/parentNode1.vue"),
+  },
+  {
+    name: "children1",
+    path: "/children1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/children1.vue"),
+  },
+  {
+    name: "nextElementSibling1",
+    path: "/nextElementSibling1",
+    component: () =>
+      import(
+        /* webpackChunkName: "date" */ "@/views/dom/nextElementSibling1.vue"
+      ),
+  },
+  {
+    name: "previousElementSibling1",
+    path: "/previousElementSibling1",
+    component: () =>
+      import(
+        /* webpackChunkName: "date" */ "@/views/dom/previousElementSibling1.vue"
+      ),
+  },
+  {
+    name: "createElement1",
+    path: "/createElement1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/createElement1.vue"),
+  },
+  {
+    name: "appendChild1",
+    path: "/appendChild1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/appendChild1.vue"),
+  },
+  {
+    name: "cloneNode1",
+    path: "/cloneNode1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/cloneNode1.vue"),
+  },
+  {
+    name: "romoveChild1",
+    path: "/romoveChild1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/romoveChild1.vue"),
   },
 ];

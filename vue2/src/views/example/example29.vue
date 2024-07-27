@@ -30,6 +30,10 @@ export default {
     return {};
   },
   mounted() {
+    this.getCountTime();
+    // setInterval(() => {
+    //   this.getCountTime();
+    // }, 1000);
     // 1. 事件委托的方法 获取父元素 tabs-list
     const list = document.querySelector(".tabs-list");
     const line = document.querySelector(".line");
