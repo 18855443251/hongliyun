@@ -27,18 +27,23 @@ export default {
     zhuTest() {
       let obj = {
         firstName: "Bill",
-        add() {
-         console.log(this.firstName)//Bill 指向obj对象
+        add: function () {
+          console.log(this, "add"); // 指向obj对象
           setTimeout(function () {
-            console.log(this); //指向window
+            console.log(this, "setTimeout"); //指向window
           }, 0);
           //而箭头函数中的this他是指向的最近作用域的对象，也就是说最近调用它的对象
           setTimeout(() => {
-            console.log(this.firstName); //指向obj
+            console.log(this, "setTimeout1"); //指向obj
           }, 0);
         },
+        sub: () => {
+          console.log(this, "sub"); //vue实例
+        },
       };
+      // 普通函数谁调用它就指向谁
       obj.add();
+      obj.sub();
     },
   },
 };

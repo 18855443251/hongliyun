@@ -21,14 +21,7 @@ export default {
       arr: ["真嘎和", "呵呵", "好"],
     };
   },
-  created() {
-    for (let item of this.arr) {
-      if (item == "呵呵") {
-        return;
-      }
-      console.log(item,'ss2')
-    }
-  },
+  created() {},
   methods: {
     test() {},
   },

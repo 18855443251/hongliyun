@@ -21,23 +21,16 @@ export default {
     };
   },
   created() {
-    this.test();
+    let test = function (name) {
+      return {
+        name: name,
+      };
+    };
+    console.log(test("张三"));
+    let test1 = (name) => ({ name });
+    console.log(test1("李四"));
   },
-  methods: {
-    test() {
-      let flag1 = true;
-      let flag = true;
-      let arr = [{}, { name: "zli" }];
-      if (flag1) {
-        let item1 = { name: "张三" };
-        for (let item of arr) {
-          if (flag) {
-            console.log(item1.name);
-          }
-        }
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 

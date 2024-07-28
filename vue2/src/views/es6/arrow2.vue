@@ -8,7 +8,7 @@
 -->
 <template>
   <div>
-    <div>let</div>
+    <div class="test">let</div>
   </div>
 </template>
 
@@ -21,23 +21,20 @@ export default {
     };
   },
   created() {
-    this.test();
+    let test = function (x, y) {
+      return x + y;
+    };
+    console.log(test(1, 2));
+    let test1 = (x, y) => x + y;
+    console.log(test1(3, 2));
   },
-  methods: {
-    test() {
-      let flag1 = true;
-      let flag = true;
-      let arr = [{}, { name: "zli" }];
-      if (flag1) {
-        let item1 = { name: "张三" };
-        for (let item of arr) {
-          if (flag) {
-            console.log(item1.name);
-          }
-        }
-      }
-    },
+  mounted() {
+    let a = document.querySelector(".test");
+    a.addEventListener("click", () => {
+      console.log(this);
+    });
   },
+  methods: {},
 };
 </script>
 

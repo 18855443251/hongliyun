@@ -11,7 +11,6 @@ const arr2 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr2.vue"); 
 const arr3 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr3.vue"); // 通讯录
 const ArrayPrototype = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/ArrayPrototype.vue"); // 通讯录
-const arr5 = () => import(/* webpackChunkName: "my" */ "@/views/arr/arr5.vue"); // 通讯录
 const arrbianli = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/arrbianli.vue"); // 通讯录
 const map1 = () => import(/* webpackChunkName: "my" */ "@/views/arr/map1.vue"); // 通讯录
@@ -138,11 +137,6 @@ export default [
     name: "filter1",
     path: "/filter1",
     component: filter1,
-  },
-  {
-    name: "arr5",
-    path: "/arr5",
-    component: arr5,
   },
   {
     name: "flat1",

@@ -21,23 +21,20 @@ export default {
     };
   },
   created() {
-    this.test();
+    window.addEventListener("click", function () {
+      console.log(this); //window
+    });
+    let test = function () {
+      setTimeout(function () {
+        console.log(this);
+      });
+      console.log(this, "火锅"); //undefined
+    };
+    test();
+    let test1 = () => console.log(this);
+    test1();
   },
-  methods: {
-    test() {
-      let flag1 = true;
-      let flag = true;
-      let arr = [{}, { name: "zli" }];
-      if (flag1) {
-        let item1 = { name: "张三" };
-        for (let item of arr) {
-          if (flag) {
-            console.log(item1.name);
-          }
-        }
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
