@@ -71,6 +71,35 @@ function getCountTime() {
   s = s < 10 ? "0" + s : s;
   console.log(h, m, s);
 }
+function downLoad(url, params) {
+  params.responseType = "blob";
+  return new Promise((resolve, reject) => {
+    this.$axios
+      .post("login.do", params || {})
+      .then((res) => {
+        if ("download" in document.createElement("a")) {
+          // 支持a标签download属性的浏览器
+          const url = window.URL.createObjectURL(res.data); // 为文件流构建下载链接
+          const a = document.createElement("a");
+          a.href = url;
+          let fileName = window.decodeURI(
+            res.fileName.substring(res.fileName.indexOf("=") + 1)
+          );
+          a.setAttribute("download", fileName);
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else {
+          // window.navigator.msSaveBlob是一个用于在Internet Explorer浏览器中保存Blob对象的方法。它可以将Blob对象保存为本地文件。
+          navigator.msSaveBlob(res.data, res.fileName);
+        }
+        resolve();
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
 export default {
   divieName,
   test,

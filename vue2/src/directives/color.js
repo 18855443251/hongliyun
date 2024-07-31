@@ -5,6 +5,7 @@ Vue.directive("color", {
   inserted(el, binding) {
     // console.log(el, binding.value);
     // binding.value 就是指令的值
+    // el 原生的dom对象
     el.style.color = binding.value;
   },
   // 2. update 指令的值修改的时候触发，提供值变化后，dom更新的逻辑

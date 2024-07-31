@@ -65,4 +65,40 @@ export default [
     component: () =>
       import(/* webpackChunkName: "my" */ "@/views/es6/arrow3.vue"),
   },
+  {
+    name: "assign2",
+    path: "/assign2",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/assign2.vue"),
+  },
+  {
+    name: "assign3",
+    path: "/assign3",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/assign3.vue"),
+  },
+  {
+    name: "Objectkeys1",
+    path: "/Objectkeys1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/Objectkeys1.vue"),
+  },
+  {
+    name: "call1",
+    path: "/call1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/call1.vue"),
+  },
+  {
+    name: "apply1",
+    path: "/apply1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/apply1.vue"),
+  },
+  {
+    name: "bind1",
+    path: "/bind1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/bind1.vue"),
+  },
 ];

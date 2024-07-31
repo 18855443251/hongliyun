@@ -8,7 +8,7 @@
 -->
 <template>
   <div class="claneCache_view">
-    <div @click="test">积极</div>
+    <div @click="test">记事本下载</div>
   </div>
 </template>
 <script>

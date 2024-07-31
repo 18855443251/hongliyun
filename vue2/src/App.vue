@@ -63,6 +63,17 @@ export default {
   //   },
   // },
   mounted() {
+    // let a = document.querySelectorAll("input");
+    // for (let i = 0; i < a.length; i++) {
+    //   window.addEventListener("input", ($evet) => {
+    //     const specialSymbol =
+    //       /[`~!@#$%^&*()+=|{}':;',/\/\[\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]/;
+    //     const hasSymbol = specialSymbol.test($evet.target.value);
+    //     $evet.target.value = $evet.target.value.replace(specialSymbol, "");
+    //     console.log($evet.target.value);
+    //   });
+    // }
+
     window.onhashchange = () => {
       // console.log(location.hash, "路由");
     };

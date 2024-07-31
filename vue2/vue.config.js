@@ -39,8 +39,8 @@ module.exports = {
     proxy: {
       "/process": {
         target: "http://localhost:3000/process", //发财
-        ws: true,
-        changeOrigin: true,
+        ws: true,//是否代理websovket
+        changeOrigin: true,//是否开启跨域
         pathRewrite: {
           "^/process": "", //代理的路径
         },

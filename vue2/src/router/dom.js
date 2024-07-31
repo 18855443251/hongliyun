@@ -251,4 +251,10 @@ export default [
     component: () =>
       import(/* webpackChunkName: "date" */ "@/views/dom/romoveChild1.vue"),
   },
+  {
+    name: "romoveChild1",
+    path: "/romoveChild1",
+    component: () =>
+      import(/* webpackChunkName: "date" */ "@/views/dom/romoveChild1.vue"),
+  },
 ];

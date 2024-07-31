@@ -86,7 +86,7 @@ import mixins from "./mixins.js";
 import jilei from "./jilei.js";
 import secondRouter from "./secondRouter.js";
 import directives1 from "./directives1.js";
-
+import fileDown from "./fileDown.js";
 const routes = [
   {
     path: "/home",
@@ -237,6 +237,7 @@ const routes = [
     name: "typeof1",
     component: typeof1,
   },
+
   {
     path: "/",
     redirect: "/home",
@@ -275,6 +276,7 @@ const routes = [
   ...jilei,
   ...secondRouter,
   ...directives1,
+  ...fileDown,
   // ...table
   {
     path: "*",

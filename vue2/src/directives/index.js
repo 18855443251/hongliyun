@@ -1,7 +1,10 @@
 import focus from "./focus";
 import color from "./color";
+import input from "./input";
 const directives = {
-  focus,color
+  focus,
+  color,
+  input,
 };
 export default {
   install(Vue) {
