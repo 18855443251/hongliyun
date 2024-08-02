@@ -101,4 +101,52 @@ export default [
     component: () =>
       import(/* webpackChunkName: "fenye" */ "@/views/es6/bind1.vue"),
   },
+  {
+    name: "callback1",
+    path: "/callback1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/callback1.vue"),
+  },
+  {
+    name: "callback2",
+    path: "/callback2",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/callback2.vue"),
+  },
+  {
+    name: "callback3",
+    path: "/callback3",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/callback3.vue"),
+  },
+  {
+    name: "callback4",
+    path: "/callback4",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/callback4.vue"),
+  },
+  {
+    name: "bibao1",
+    path: "/bibao1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/bibao1.vue"),
+  },
+  {
+    name: "bibao2",
+    path: "/bibao2",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/bibao2.vue"),
+  },
+  {
+    name: "bibao3",
+    path: "/bibao3",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/bibao3.vue"),
+  },
+  {
+    name: "debounce1",
+    path: "/debounce1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/debounce1.vue"),
+  },
 ];

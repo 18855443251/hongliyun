@@ -7,9 +7,7 @@
  * @FilePath: \vue\src\views\VxMobile.vue
 -->
 <template>
-  <div class="claneCache_view">
-    <div @click="test">积极</div>
-  </div>
+  <div class="claneCache_view"></div>
 </template>
 <script>
 import navBar from "@/components/navBar";
@@ -21,27 +19,20 @@ export default {
       inputVal: "",
     };
   },
-  created() {},
-  mounted() {},
-  methods: {
-    test() {
-      // 创建一个Blob对象
-      var data = "Hello, World!";
-      var blob = new Blob([data], { type: "text/plain" });
-      const url = window.URL.createObjectURL(blob); // 为文件流构建下载链接
-      const a = document.createElement("a");
-      a.href = url;
+  created() {
+    function greeting(name) {
+      alert("Hello " + name);
+    }
 
-      a.setAttribute("download", "hh.txt");
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      // 使用window.navigator.msSaveBlob保存Blob对象为本地文件
-      if (window.navigator && window.navigator.msSaveBlob) {
-        window.navigator.msSaveBlob(blob, "example.txt");
-      }
-    },
+    function processUserInput(callback) {
+      var name = "张三";
+      callback(name);
+    }
+
+    processUserInput(greeting);
   },
+  mounted() {},
+  methods: {},
 };
 </script>
 <style scoped></style>

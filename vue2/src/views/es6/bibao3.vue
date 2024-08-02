@@ -20,10 +20,10 @@ export default {
     return {};
   },
   mounted() {
-    this.test()
+    // this.test()
     // console.log(this.outer()); //20
     //调用
-    // console.log(this.out()());
+    console.log(this.out());
   },
   methods: {
     test() {
@@ -31,7 +31,7 @@ export default {
       for (var i = 0; i < oDiv.length; i++) {
         console.log(oDiv.length);
         oDiv[i].onclick = function () {
-          console.log(i);//10
+          console.log(i); //10
         };
       }
     },
@@ -43,25 +43,31 @@ export default {
       return inner();
     },
     out() {
-      var num = 10;
-      return (inner = function () {
-        return (num += 10);
-      });
+      function count() {
+        let i = 0;
+        function fn() {
+          i++;
+          console.log(`函数被调用了${i}次`);
+        }
+        return fn;
+      }
+      const fun = count();
+      console.log(fun)
+      fun()
     },
   },
 };
 </script>
 
 <style scoped>
-.gg{
-    display: flex;
-    flex-direction: row;
-
+.gg {
+  display: flex;
+  flex-direction: row;
 }
 div {
-    margin-right:60px ;
+  margin-right: 60px;
 }
-.test{
-    margin-left: 20px;
+.test {
+  margin-left: 20px;
 }
 </style>

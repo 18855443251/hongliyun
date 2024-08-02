@@ -68,9 +68,7 @@ import css from "./css.js";
 import table from "./table.js";
 import slot from "./slot.js";
 import promise from "./promise.js";
-import callback from "./callback.js";
 import timeout from "./timeout.js";
-import bibao from "./bibao.js";
 import axios from "./axios.js";
 import es6 from "./es6.js";
 import zujian from "./zujian.js";
@@ -258,9 +256,7 @@ const routes = [
   ...table,
   ...slot,
   ...promise,
-  ...callback,
   ...timeout,
-  ...bibao,
   ...axios,
   ...es6,
   ...zujian,
