@@ -68,9 +68,8 @@ module.exports = {
     },
   },
   configureWebpack: (config) => {
-    if (process.env.NODE_ENV === "production") {
-      config["plugins"].push(fileManagerPlugin);
+    if (process.env.NODE_ENV === 'production') {
+      config['plugins'].push(fileManagerPlugin)
     }
   },
-};
-console.log("process.env:", process.env.NODE_ENV);
+}
