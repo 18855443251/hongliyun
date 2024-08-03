@@ -298,7 +298,7 @@ const router = new VueRouter({
 //   }
 // });
 router.afterEach((to, from) => {
-  console.log(to, "to");
-  console.log(from, "from");
+  // console.log(to, "to");
+  // console.log(from, "from");
 });
 export default router;

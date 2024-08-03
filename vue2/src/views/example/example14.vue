@@ -187,15 +187,17 @@ export default {
     console.log(this.tabBoxHeight, "分类标签高度");
     // 获取各个模块距离
     this.getDistance();
-    window.addEventListener("scroll", this.viewScroll);
-    this.viewFn = debounce(
-      (e) => {
-        this.scrollTop = myTool.scroll().top;
-        this.getIndex(this.scrollTop);
-      },
-      100,
-      1,
-      this
+    window.addEventListener(
+      "scroll",
+      debounce(
+        (e) => {
+          this.scrollTop = myTool.scroll().top;
+          this.getIndex(this.scrollTop);
+        },
+        100,
+        1,
+        this
+      )
     );
   },
   methods: {
@@ -216,10 +218,7 @@ export default {
         }
       });
     },
-    // 滚动
-    viewScroll(e) {
-      this.viewFn(e);
-    },
+
     //获取每个模块距离页面顶部的距离
     getDistance() {
       let lastIndex = this.appClassList.length - 1;
