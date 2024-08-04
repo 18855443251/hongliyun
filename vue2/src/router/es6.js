@@ -179,4 +179,22 @@ export default [
     component: () =>
       import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype5.vue"),
   },
+  {
+    name: "constructor1",
+    path: "/constructor1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/constructor1.vue"),
+  },
+  {
+    name: "createObj1",
+    path: "/createObj1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/createObj1.vue"),
+  },
+  {
+    name: "createObj2",
+    path: "/createObj2",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/createObj2.vue"),
+  },
 ];

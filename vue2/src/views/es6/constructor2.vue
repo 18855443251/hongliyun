@@ -46,8 +46,8 @@ export default {
     },
     test2() {
       let arr = [1, 2];
-      let res = arr.constructor(); 
-      console.log(res)
+      let res = arr.constructor();
+      console.log(res);
     },
   },
 };

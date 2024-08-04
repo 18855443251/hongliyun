@@ -44,9 +44,6 @@ const reduce2 = () =>
 const at = () => import(/* webpackChunkName: "my" */ "@/views/arr/at.vue"); // 通讯录
 const cancat = () =>
   import(/* webpackChunkName: "my" */ "@/views/arr/cancat.vue"); // 通讯录
-const constructor = () =>
-  import(/* webpackChunkName: "my" */ "@/views/arr/constructor.vue"); // 通讯录
-
 export default [
   {
     name: "arr1",
@@ -162,11 +159,6 @@ export default [
     name: "cancat",
     path: "/cancat",
     component: cancat,
-  },
-  {
-    name: "constructor",
-    path: "/constructor",
-    component: constructor,
   },
   {
     name: "forEach2",

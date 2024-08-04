@@ -130,17 +130,5 @@ export default [
     name: "obj19",
     path: "/obj19",
     component: obj19,
-  },
-  {
-    name: "createObj1",
-    path: "/createObj1",
-    component: () =>
-      import(/* webpackChunkName: "fenye" */ "@/views/obj/createObj1.vue"),
-  },
-  {
-    name: "createObj2",
-    path: "/createObj2",
-    component: () =>
-      import(/* webpackChunkName: "fenye" */ "@/views/obj/createObj2.vue"),
-  },
+  }
 ];
