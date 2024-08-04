@@ -21,14 +21,12 @@ export default {
     function Star(uname, age) {
       this.uname = uname;
       this.age = age;
-      // this.sing = function () {
-      //   console.log('唱歌')
-      // }
     }
     // 2. 公共的方法写到原型对象身上   节约了内存
     Star.prototype.sing = function () {
       console.log("唱歌");
     };
+    console.log(Star.prototype)
     const ldh = new Star("刘德华", 55);
     const zxy = new Star("张学友", 58);
     ldh.sing(); //调用

@@ -149,4 +149,34 @@ export default [
     component: () =>
       import(/* webpackChunkName: "fenye" */ "@/views/es6/debounce1.vue"),
   },
+  {
+    name: "prototype1",
+    path: "/prototype1",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype1.vue"),
+  },
+  {
+    name: "prototype2",
+    path: "/prototype2",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype2.vue"),
+  },
+  {
+    name: "prototype3",
+    path: "/prototype3",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype3.vue"),
+  },
+  {
+    name: "prototype4",
+    path: "/prototype4",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype4.vue"),
+  },
+  {
+    name: "prototype5",
+    path: "/prototype5",
+    component: () =>
+      import(/* webpackChunkName: "fenye" */ "@/views/es6/prototype5.vue"),
+  },
 ];

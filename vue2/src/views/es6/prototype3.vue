@@ -35,8 +35,6 @@ export default {
     console.log(arr.max());
     console.log([2, 5, 9].max());
     console.log(arr.min());
-    // const arr = new Array(1, 2)
-    // console.log(arr)
     // 3. 求和 方法
     Array.prototype.sum = function () {
       return this.reduce((prev, item) => prev + item, 0);
