@@ -20,8 +20,8 @@ export default {
     };
   },
   created() {
-    // this.test();
-    this.test1();
+    this.test();
+    // this.test1();
     // this.test2();
   },
   methods: {
